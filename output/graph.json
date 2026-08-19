@@ -1,0 +1,3228 @@
+{
+ "meta": {
+  "source": "Sahih al-Bukhari (LK Hadith Corpus)",
+  "hadiths_total": 7345,
+  "hadiths_parsed": 6617,
+  "edge_definition": "shared direct students (2nd narrator in isnad)",
+  "n_communities": 13
+ },
+ "nodes": [
+  {
+   "id": "Abu Huraira",
+   "hadith_count": 966,
+   "n_students": 177,
+   "community": 0
+  },
+  {
+   "id": "Anas bin Malik",
+   "hadith_count": 694,
+   "n_students": 128,
+   "community": 2
+  },
+  {
+   "id": "'Aisha",
+   "hadith_count": 668,
+   "n_students": 91,
+   "community": 0
+  },
+  {
+   "id": "Ibn 'Umar",
+   "hadith_count": 531,
+   "n_students": 67,
+   "community": 0
+  },
+  {
+   "id": "Ibn 'Abbas",
+   "hadith_count": 507,
+   "n_students": 85,
+   "community": 0
+  },
+  {
+   "id": "'Abdullah bin Mas'ud",
+   "hadith_count": 257,
+   "n_students": 57,
+   "community": 1
+  },
+  {
+   "id": "Jabir bin 'Abdullah",
+   "hadith_count": 248,
+   "n_students": 68,
+   "community": 0
+  },
+  {
+   "id": "Abu Sa'id Al-Khudri",
+   "hadith_count": 167,
+   "n_students": 66,
+   "community": 0
+  },
+  {
+   "id": "Al-Bara' bin 'Azib",
+   "hadith_count": 118,
+   "n_students": 21,
+   "community": 4
+  },
+  {
+   "id": "Abu Musa Al-Ash'ari",
+   "hadith_count": 112,
+   "n_students": 30,
+   "community": 1
+  },
+  {
+   "id": "Sahl bin Sa'd",
+   "hadith_count": 103,
+   "n_students": 12,
+   "community": 2
+  },
+  {
+   "id": "'Ali bin Abi Talib",
+   "hadith_count": 63,
+   "n_students": 25,
+   "community": 1
+  },
+  {
+   "id": "'Abdullah bin 'Amr",
+   "hadith_count": 59,
+   "n_students": 36,
+   "community": 0
+  },
+  {
+   "id": "'Umar bin Al-Khattab",
+   "hadith_count": 45,
+   "n_students": 23,
+   "community": 3
+  },
+  {
+   "id": "Asma' bint Abu Bakr",
+   "hadith_count": 39,
+   "n_students": 15,
+   "community": 3
+  },
+  {
+   "id": "Um Salama",
+   "hadith_count": 37,
+   "n_students": 15,
+   "community": 3
+  },
+  {
+   "id": "Sa'd bin Abi Waqqas",
+   "hadith_count": 34,
+   "n_students": 15,
+   "community": 1
+  },
+  {
+   "id": "Abu Bakra",
+   "hadith_count": 32,
+   "n_students": 5,
+   "community": 3
+  },
+  {
+   "id": "Salama bin Al-Akwa'",
+   "hadith_count": 30,
+   "n_students": 7,
+   "community": 0
+  },
+  {
+   "id": "Hudhaifa",
+   "hadith_count": 28,
+   "n_students": 13,
+   "community": 1
+  },
+  {
+   "id": "Abu Qatada",
+   "hadith_count": 26,
+   "n_students": 12,
+   "community": 0
+  },
+  {
+   "id": "Al-Mughira bin Shu'ba",
+   "hadith_count": 23,
+   "n_students": 11,
+   "community": 1
+  },
+  {
+   "id": "Usama bin Zaid",
+   "hadith_count": 22,
+   "n_students": 12,
+   "community": 3
+  },
+  {
+   "id": "`Adi bin Hatim",
+   "hadith_count": 22,
+   "n_students": 8,
+   "community": 4
+  },
+  {
+   "id": "Abu Dhar",
+   "hadith_count": 19,
+   "n_students": 8,
+   "community": 1
+  },
+  {
+   "id": "Abu Mas`ud",
+   "hadith_count": 19,
+   "n_students": 13,
+   "community": 1
+  },
+  {
+   "id": "Maimuna",
+   "hadith_count": 18,
+   "n_students": 5,
+   "community": 3
+  },
+  {
+   "id": "Zaid bin Thabit",
+   "hadith_count": 17,
+   "n_students": 11,
+   "community": 2
+  },
+  {
+   "id": "'Ubada bin As-Samit",
+   "hadith_count": 17,
+   "n_students": 12,
+   "community": 3
+  },
+  {
+   "id": "Abu Juhaifa",
+   "hadith_count": 17,
+   "n_students": 8,
+   "community": 0
+  },
+  {
+   "id": "Jubair bin Mut`im",
+   "hadith_count": 15,
+   "n_students": 5,
+   "community": 1
+  },
+  {
+   "id": "Um 'Atiyya",
+   "hadith_count": 15,
+   "n_students": 5,
+   "community": 2
+  },
+  {
+   "id": "`Imran bin Husain",
+   "hadith_count": 14,
+   "n_students": 10,
+   "community": 5
+  },
+  {
+   "id": "`Uqba bin 'Amir",
+   "hadith_count": 14,
+   "n_students": 2,
+   "community": 0
+  },
+  {
+   "id": "Jarir",
+   "hadith_count": 14,
+   "n_students": 7,
+   "community": 1
+  },
+  {
+   "id": "As-Saib bin Yazid",
+   "hadith_count": 12,
+   "n_students": 6,
+   "community": 0
+  },
+  {
+   "id": "Al-Miswar bin Makhrama",
+   "hadith_count": 12,
+   "n_students": 7,
+   "community": 3
+  },
+  {
+   "id": "Rafi` bin Khadij",
+   "hadith_count": 12,
+   "n_students": 9,
+   "community": 8
+  },
+  {
+   "id": "`Abdullah bin Abi Qatada",
+   "hadith_count": 11,
+   "n_students": 1,
+   "community": 0
+  },
+  {
+   "id": "Khabbab",
+   "hadith_count": 11,
+   "n_students": 4,
+   "community": 1
+  },
+  {
+   "id": "An-Nu`man bin 'Bashir",
+   "hadith_count": 10,
+   "n_students": 7,
+   "community": 4
+  },
+  {
+   "id": "`Abdullah bin Dinar",
+   "hadith_count": 10,
+   "n_students": 8,
+   "community": 0
+  },
+  {
+   "id": "`Uqba bin Al-Harith",
+   "hadith_count": 10,
+   "n_students": 2,
+   "community": 3
+  },
+  {
+   "id": "Ibn Shihab",
+   "hadith_count": 10,
+   "n_students": 9,
+   "community": 2
+  },
+  {
+   "id": "`Abdullah bin Abi `Aufa",
+   "hadith_count": 10,
+   "n_students": 7,
+   "community": 2
+  },
+  {
+   "id": "Jarir bin Abdullah",
+   "hadith_count": 9,
+   "n_students": 5,
+   "community": 1
+  },
+  {
+   "id": "Abu Mas`ud Al-Ansari",
+   "hadith_count": 9,
+   "n_students": 7,
+   "community": 1
+  },
+  {
+   "id": "Hakim bin Hizam",
+   "hadith_count": 9,
+   "n_students": 5,
+   "community": 3
+  },
+  {
+   "id": "Ibn Abi `Aufa",
+   "hadith_count": 9,
+   "n_students": 8,
+   "community": 2
+  },
+  {
+   "id": "Abu Huraira and Zaid bin Khalid",
+   "hadith_count": 9,
+   "n_students": 5,
+   "community": 0
+  },
+  {
+   "id": "Salim bin `Abdullah",
+   "hadith_count": 8,
+   "n_students": 3,
+   "community": 2
+  },
+  {
+   "id": "Zaid bin Khalid Al-Juhani",
+   "hadith_count": 8,
+   "n_students": 4,
+   "community": 0
+  },
+  {
+   "id": "`Abdullah bin Zaid",
+   "hadith_count": 8,
+   "n_students": 3,
+   "community": 6
+  },
+  {
+   "id": "`Amra bint `Abdur-Rahman",
+   "hadith_count": 8,
+   "n_students": 3,
+   "community": 2
+  },
+  {
+   "id": "Zaid bin Arqam",
+   "hadith_count": 8,
+   "n_students": 4,
+   "community": 4
+  },
+  {
+   "id": "Abu Humaid As-Sa`idi",
+   "hadith_count": 8,
+   "n_students": 4,
+   "community": 9
+  },
+  {
+   "id": "Al-Qasim bin Muhammad",
+   "hadith_count": 8,
+   "n_students": 5,
+   "community": 2
+  },
+  {
+   "id": "Zaid bin Khalid",
+   "hadith_count": 8,
+   "n_students": 5,
+   "community": 0
+  },
+  {
+   "id": "`Abdullah bin Ka`b",
+   "hadith_count": 8,
+   "n_students": 6,
+   "community": 7
+  },
+  {
+   "id": "Ka`b bin Malik",
+   "hadith_count": 8,
+   "n_students": 7,
+   "community": 7
+  },
+  {
+   "id": "Aslam",
+   "hadith_count": 8,
+   "n_students": 3,
+   "community": 3
+  },
+  {
+   "id": "`Abdullah bin Mughaffal",
+   "hadith_count": 7,
+   "n_students": 4,
+   "community": 2
+  },
+  {
+   "id": "Jabir bin `Abdullah Al-Ansari",
+   "hadith_count": 7,
+   "n_students": 6,
+   "community": 4
+  },
+  {
+   "id": "Jabir bin Samura",
+   "hadith_count": 7,
+   "n_students": 4,
+   "community": 10
+  },
+  {
+   "id": "`Abdul `Aziz",
+   "hadith_count": 7,
+   "n_students": 4,
+   "community": 2
+  },
+  {
+   "id": "Um `Atiya",
+   "hadith_count": 7,
+   "n_students": 4,
+   "community": 2
+  },
+  {
+   "id": "Usama",
+   "hadith_count": 7,
+   "n_students": 4,
+   "community": 3
+  },
+  {
+   "id": "Ubai bin Ka`b",
+   "hadith_count": 7,
+   "n_students": 6,
+   "community": 1
+  },
+  {
+   "id": "Abu Usaid",
+   "hadith_count": 7,
+   "n_students": 5,
+   "community": 0
+  },
+  {
+   "id": "Suwaid bin An-Nu`man",
+   "hadith_count": 7,
+   "n_students": 2,
+   "community": 11
+  },
+  {
+   "id": "Abu Talha",
+   "hadith_count": 7,
+   "n_students": 4,
+   "community": 3
+  },
+  {
+   "id": "Jundub",
+   "hadith_count": 7,
+   "n_students": 5,
+   "community": 4
+  },
+  {
+   "id": "Abu Dharr",
+   "hadith_count": 7,
+   "n_students": 3,
+   "community": 1
+  },
+  {
+   "id": "Hafsa",
+   "hadith_count": 6,
+   "n_students": 4,
+   "community": 3
+  },
+  {
+   "id": "Abu Bakr As-Siddiq",
+   "hadith_count": 6,
+   "n_students": 4,
+   "community": 3
+  },
+  {
+   "id": "`Asim",
+   "hadith_count": 6,
+   "n_students": 4,
+   "community": 2
+  },
+  {
+   "id": "`Abbad bin Tamim",
+   "hadith_count": 6,
+   "n_students": 3,
+   "community": 6
+  },
+  {
+   "id": "Samura bin Jundab",
+   "hadith_count": 6,
+   "n_students": 3,
+   "community": 5
+  },
+  {
+   "id": "Ash-Shaibani",
+   "hadith_count": 6,
+   "n_students": 4,
+   "community": 2
+  },
+  {
+   "id": "Thabit bin Ad-Dahhak",
+   "hadith_count": 6,
+   "n_students": 2,
+   "community": 2
+  },
+  {
+   "id": "Ash-Shu`bi",
+   "hadith_count": 6,
+   "n_students": 4,
+   "community": 4
+  },
+  {
+   "id": "Hisham",
+   "hadith_count": 6,
+   "n_students": 4,
+   "community": 1
+  },
+  {
+   "id": "`Amr bin Dinar",
+   "hadith_count": 6,
+   "n_students": 2,
+   "community": 0
+  },
+  {
+   "id": "Abu Aiyub Al-Ansari",
+   "hadith_count": 6,
+   "n_students": 5,
+   "community": 0
+  },
+  {
+   "id": "Ka'b bin 'Ujra",
+   "hadith_count": 6,
+   "n_students": 2,
+   "community": 1
+  },
+  {
+   "id": "Al-Musaiyab",
+   "hadith_count": 6,
+   "n_students": 3,
+   "community": 1
+  },
+  {
+   "id": "Abu Rafi`",
+   "hadith_count": 5,
+   "n_students": 3,
+   "community": 1
+  },
+  {
+   "id": "`Abdullah bin Buhaina",
+   "hadith_count": 5,
+   "n_students": 3,
+   "community": 0
+  },
+  {
+   "id": "Muhammad bin Seereen",
+   "hadith_count": 5,
+   "n_students": 4,
+   "community": 2
+  },
+  {
+   "id": "Muhammad",
+   "hadith_count": 5,
+   "n_students": 2,
+   "community": 2
+  },
+  {
+   "id": "Zainab bint Abi Salama",
+   "hadith_count": 5,
+   "n_students": 3,
+   "community": 0
+  },
+  {
+   "id": "`Amr bin Al-Harith",
+   "hadith_count": 5,
+   "n_students": 3,
+   "community": 4
+  },
+  {
+   "id": "'Ubaidullah bin `Abdullah",
+   "hadith_count": 5,
+   "n_students": 2,
+   "community": 0
+  },
+  {
+   "id": "`Imran",
+   "hadith_count": 5,
+   "n_students": 4,
+   "community": 5
+  },
+  {
+   "id": "Muawiya",
+   "hadith_count": 5,
+   "n_students": 5,
+   "community": 3
+  },
+  {
+   "id": "Sa`id",
+   "hadith_count": 5,
+   "n_students": 3,
+   "community": 12
+  },
+  {
+   "id": "`Abdullah bin Az-Zubair",
+   "hadith_count": 5,
+   "n_students": 3,
+   "community": 3
+  },
+  {
+   "id": "Humaid bin `Abdur Rahman",
+   "hadith_count": 5,
+   "n_students": 4,
+   "community": 2
+  },
+  {
+   "id": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "hadith_count": 5,
+   "n_students": 3,
+   "community": 1
+  },
+  {
+   "id": "`Abdur-Rahman bin Abu Bakr",
+   "hadith_count": 5,
+   "n_students": 2,
+   "community": 1
+  }
+ ],
+ "edges": [
+  {
+   "source": "Abu Huraira",
+   "target": "'Abdullah bin Mas'ud",
+   "weight": 8
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Musa Al-Ash'ari",
+   "weight": 5
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 4
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Usama",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Usama bin Zaid",
+   "weight": 4
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "`Abdur-Rahman bin Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Jabir bin 'Abdullah",
+   "weight": 17
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Anas bin Malik",
+   "weight": 7
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Mas`ud",
+   "weight": 3
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Al-Mughira bin Shu'ba",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Hudhaifa",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Jarir",
+   "weight": 3
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Jarir bin Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Sa'id Al-Khudri",
+   "weight": 16
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "'Abdullah bin 'Amr",
+   "weight": 13
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "'Aisha",
+   "weight": 15
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Ibn 'Abbas",
+   "weight": 21
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Ibn 'Umar",
+   "weight": 13
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "`Imran bin Husain",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Qatada",
+   "weight": 4
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Al-Bara' bin 'Azib",
+   "weight": 3
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Zainab bint Abi Salama",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "`Abdullah bin Buhaina",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "'Ubaidullah bin `Abdullah",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Zaid bin Khalid Al-Juhani",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Salim bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Zaid bin Thabit",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "An-Nu`man bin 'Bashir",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "`Adi bin Hatim",
+   "weight": 3
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Huraira and Zaid bin Khalid",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Sahl bin Sa'd",
+   "weight": 4
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Um 'Atiyya",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Um `Atiya",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Al-Musaiyab",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Hisham",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Jubair bin Mut`im",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Rafi`",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "'Ubada bin As-Samit",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Hakim bin Hizam",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Um Salama",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Ka`b bin Malik",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Usaid",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Zaid bin Khalid",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "`Abdullah bin Dinar",
+   "weight": 2
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "`Amr bin Dinar",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "As-Saib bin Yazid",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Mas`ud Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Dhar",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Abu Aiyub Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira",
+   "target": "Muawiya",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Al-Qasim bin Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "`Amra bint `Abdur-Rahman",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 3
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Ibn 'Abbas",
+   "weight": 4
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Ibn 'Umar",
+   "weight": 5
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Um 'Atiyya",
+   "weight": 2
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Um `Atiya",
+   "weight": 2
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "'Abdullah bin Mas'ud",
+   "weight": 3
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "'Aisha",
+   "weight": 6
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Abu Sa'id Al-Khudri",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "As-Saib bin Yazid",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Jabir bin 'Abdullah",
+   "weight": 5
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Sahl bin Sa'd",
+   "weight": 3
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "'Ubada bin As-Samit",
+   "weight": 3
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Abu Dhar",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Abu Musa Al-Ash'ari",
+   "weight": 2
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Abu Usaid",
+   "weight": 2
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Abu Bakr As-Siddiq",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Abu Talha",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Al-Bara' bin 'Azib",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Humaid bin `Abdur Rahman",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Ibn Shihab",
+   "weight": 2
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Salim bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Jarir",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "`Abdullah bin Mughaffal",
+   "weight": 3
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "'Abdullah bin 'Amr",
+   "weight": 2
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "An-Nu`man bin 'Bashir",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Muhammad bin Seereen",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Ibn Abi `Aufa",
+   "weight": 2
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Abu Bakra",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "'Ali bin Abi Talib",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "`Asim",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "`Abdul `Aziz",
+   "weight": 2
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Thabit bin Ad-Dahhak",
+   "weight": 1
+  },
+  {
+   "source": "Anas bin Malik",
+   "target": "Hisham",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Al-Qasim bin Muhammad",
+   "weight": 2
+  },
+  {
+   "source": "'Aisha",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 2
+  },
+  {
+   "source": "'Aisha",
+   "target": "Ibn 'Abbas",
+   "weight": 12
+  },
+  {
+   "source": "'Aisha",
+   "target": "'Abdullah bin 'Amr",
+   "weight": 9
+  },
+  {
+   "source": "'Aisha",
+   "target": "Hudhaifa",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Ibn 'Umar",
+   "weight": 4
+  },
+  {
+   "source": "'Aisha",
+   "target": "Abu Sa'id Al-Khudri",
+   "weight": 9
+  },
+  {
+   "source": "'Aisha",
+   "target": "Jabir bin 'Abdullah",
+   "weight": 7
+  },
+  {
+   "source": "'Aisha",
+   "target": "Zainab bint Abi Salama",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "'Ubaidullah bin `Abdullah",
+   "weight": 2
+  },
+  {
+   "source": "'Aisha",
+   "target": "Zaid bin Khalid Al-Juhani",
+   "weight": 2
+  },
+  {
+   "source": "'Aisha",
+   "target": "Abu Huraira and Zaid bin Khalid",
+   "weight": 3
+  },
+  {
+   "source": "'Aisha",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 3
+  },
+  {
+   "source": "'Aisha",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 7
+  },
+  {
+   "source": "'Aisha",
+   "target": "Hakim bin Hizam",
+   "weight": 2
+  },
+  {
+   "source": "'Aisha",
+   "target": "Um Salama",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Usama",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Usama bin Zaid",
+   "weight": 2
+  },
+  {
+   "source": "'Aisha",
+   "target": "Abu Qatada",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Abu Usaid",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Zaid bin Khalid",
+   "weight": 2
+  },
+  {
+   "source": "'Aisha",
+   "target": "'Abdullah bin Mas'ud",
+   "weight": 6
+  },
+  {
+   "source": "'Aisha",
+   "target": "As-Saib bin Yazid",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Sahl bin Sa'd",
+   "weight": 3
+  },
+  {
+   "source": "'Aisha",
+   "target": "'Ubada bin As-Samit",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Al-Bara' bin 'Azib",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Al-Miswar bin Makhrama",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "`Abdullah bin Az-Zubair",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "`Uqba bin Al-Harith",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Humaid bin `Abdur Rahman",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Ibn Shihab",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Salim bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "`Amra bint `Abdur-Rahman",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "'Ali bin Abi Talib",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Maimuna",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Ash-Shaibani",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "`Asim",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Abu Juhaifa",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Salama bin Al-Akwa'",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Abu Musa Al-Ash'ari",
+   "weight": 2
+  },
+  {
+   "source": "'Aisha",
+   "target": "Al-Mughira bin Shu'ba",
+   "weight": 1
+  },
+  {
+   "source": "'Aisha",
+   "target": "Khabbab",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "'Abdullah bin 'Amr",
+   "weight": 4
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Hudhaifa",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Ibn 'Abbas",
+   "weight": 10
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "'Abdullah bin Mas'ud",
+   "weight": 5
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Salim bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Zaid bin Thabit",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Al-Bara' bin 'Azib",
+   "weight": 3
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "An-Nu`man bin 'Bashir",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Jabir bin 'Abdullah",
+   "weight": 8
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "`Adi bin Hatim",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "`Imran bin Husain",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Um 'Atiyya",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Um `Atiya",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Abu Sa'id Al-Khudri",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "`Abdullah bin Dinar",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "As-Saib bin Yazid",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Sahl bin Sa'd",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 4
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Hafsa",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "'Ubada bin As-Samit",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Aslam",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Ibn Abi `Aufa",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "`Amr bin Dinar",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Umar",
+   "target": "Ibn Shihab",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Al-Qasim bin Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "'Abdullah bin 'Amr",
+   "weight": 6
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Hudhaifa",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Jabir bin 'Abdullah",
+   "weight": 7
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "'Ubaidullah bin `Abdullah",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Abu Sa'id Al-Khudri",
+   "weight": 5
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Zaid bin Khalid Al-Juhani",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Al-Bara' bin 'Azib",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "An-Nu`man bin 'Bashir",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "`Adi bin Hatim",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Abu Huraira and Zaid bin Khalid",
+   "weight": 4
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Um 'Atiyya",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Um `Atiya",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Abu Musa Al-Ash'ari",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Al-Musaiyab",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Hisham",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Jubair bin Mut`im",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "'Abdullah bin Mas'ud",
+   "weight": 4
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Abu Mas`ud",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Ka`b bin Malik",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Zaid bin Khalid",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Abu Qatada",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 3
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Abu Talha",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Maimuna",
+   "weight": 3
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Muawiya",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Al-Miswar bin Makhrama",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "`Abdullah bin Az-Zubair",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "`Uqba bin Al-Harith",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Ibn Abi `Aufa",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "`Amr bin Dinar",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "`Abdullah bin Ka`b",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Usama bin Zaid",
+   "weight": 2
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Abu Juhaifa",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "Salama bin Al-Akwa'",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "`Imran bin Husain",
+   "weight": 1
+  },
+  {
+   "source": "Ibn 'Abbas",
+   "target": "`Imran",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Abu Musa Al-Ash'ari",
+   "weight": 9
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 2
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Usama",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Usama bin Zaid",
+   "weight": 3
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "`Abdur-Rahman bin Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Abu Mas`ud",
+   "weight": 6
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Al-Mughira bin Shu'ba",
+   "weight": 2
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Hudhaifa",
+   "weight": 6
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Jarir",
+   "weight": 2
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Jarir bin Abdullah",
+   "weight": 3
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Salim bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Ka`b bin Malik",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Abu Sa'id Al-Khudri",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Jabir bin 'Abdullah",
+   "weight": 3
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "`Abdullah bin Dinar",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "'Ali bin Abi Talib",
+   "weight": 3
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Abu Dhar",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 4
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Abu Talha",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Maimuna",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Muawiya",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Abu Mas`ud Al-Ansari",
+   "weight": 3
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Khabbab",
+   "weight": 4
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "'Ubada bin As-Samit",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Al-Bara' bin 'Azib",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Sahl bin Sa'd",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Ibn Abi `Aufa",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "`Abdullah bin Abi `Aufa",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "'Abdullah bin 'Amr",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin Mas'ud",
+   "target": "Zaid bin Arqam",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Abu Qatada",
+   "weight": 2
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "'Abdullah bin 'Amr",
+   "weight": 7
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Abu Sa'id Al-Khudri",
+   "weight": 7
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Zainab bint Abi Salama",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Al-Bara' bin 'Azib",
+   "weight": 3
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "An-Nu`man bin 'Bashir",
+   "weight": 4
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 4
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "`Adi bin Hatim",
+   "weight": 2
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Abu Usaid",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Sahl bin Sa'd",
+   "weight": 3
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "`Abdullah bin Dinar",
+   "weight": 2
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "`Amr bin Dinar",
+   "weight": 2
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "As-Saib bin Yazid",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "'Ubada bin As-Samit",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 2
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Abu Mas`ud",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Abu Mas`ud Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Jarir",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Jarir bin Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Ibn Abi `Aufa",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin 'Abdullah",
+   "target": "Ka`b bin Malik",
+   "weight": 1
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "'Abdullah bin 'Amr",
+   "weight": 6
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Zainab bint Abi Salama",
+   "weight": 1
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "'Ubaidullah bin `Abdullah",
+   "weight": 2
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Zaid bin Khalid Al-Juhani",
+   "weight": 3
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Abu Huraira and Zaid bin Khalid",
+   "weight": 2
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Abu Qatada",
+   "weight": 2
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Abu Usaid",
+   "weight": 1
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Zaid bin Khalid",
+   "weight": 3
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 1
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Zaid bin Thabit",
+   "weight": 2
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Abu Aiyub Al-Ansari",
+   "weight": 2
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Muawiya",
+   "weight": 1
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 1
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Hafsa",
+   "weight": 1
+  },
+  {
+   "source": "Abu Sa'id Al-Khudri",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "'Abdullah bin 'Amr",
+   "weight": 2
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "An-Nu`man bin 'Bashir",
+   "weight": 3
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "`Adi bin Hatim",
+   "weight": 2
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "'Ali bin Abi Talib",
+   "weight": 2
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Hudhaifa",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Ka'b bin 'Ujra",
+   "weight": 2
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Zaid bin Arqam",
+   "weight": 2
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "`Amr bin Al-Harith",
+   "weight": 2
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "'Ubada bin As-Samit",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Sahl bin Sa'd",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Abu Bakr As-Siddiq",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Abu Aiyub Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Abu Mas`ud",
+   "weight": 1
+  },
+  {
+   "source": "Al-Bara' bin 'Azib",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 2
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Usama",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Usama bin Zaid",
+   "weight": 3
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "`Abdur-Rahman bin Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Al-Musaiyab",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Hisham",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Jubair bin Mut`im",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "'Ubada bin As-Samit",
+   "weight": 2
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Abu Dhar",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Abu Usaid",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 2
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Abu Bakr As-Siddiq",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Abu Talha",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Abu Mas`ud",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Abu Mas`ud Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Hudhaifa",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "Khabbab",
+   "weight": 1
+  },
+  {
+   "source": "Abu Musa Al-Ash'ari",
+   "target": "'Ali bin Abi Talib",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "`Abdullah bin Dinar",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "`Amr bin Dinar",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "As-Saib bin Yazid",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "Sa'd bin Abi Waqqas",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "'Ubada bin As-Samit",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "Humaid bin `Abdur Rahman",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "Ibn Shihab",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "Salim bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Sahl bin Sa'd",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "'Ali bin Abi Talib",
+   "target": "Abu Dhar",
+   "weight": 1
+  },
+  {
+   "source": "'Ali bin Abi Talib",
+   "target": "Hudhaifa",
+   "weight": 3
+  },
+  {
+   "source": "'Ali bin Abi Talib",
+   "target": "Jarir bin Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "'Ali bin Abi Talib",
+   "target": "Abu Mas`ud",
+   "weight": 1
+  },
+  {
+   "source": "'Ali bin Abi Talib",
+   "target": "Ka'b bin 'Ujra",
+   "weight": 2
+  },
+  {
+   "source": "'Ali bin Abi Talib",
+   "target": "Maimuna",
+   "weight": 1
+  },
+  {
+   "source": "'Ali bin Abi Talib",
+   "target": "Al-Miswar bin Makhrama",
+   "weight": 1
+  },
+  {
+   "source": "'Ali bin Abi Talib",
+   "target": "`Adi bin Hatim",
+   "weight": 1
+  },
+  {
+   "source": "'Ali bin Abi Talib",
+   "target": "Ubai bin Ka`b",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Hudhaifa",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Zainab bint Abi Salama",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "An-Nu`man bin 'Bashir",
+   "weight": 3
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 3
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "`Adi bin Hatim",
+   "weight": 2
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "'Umar bin Al-Khattab",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 2
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Hakim bin Hizam",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Um Salama",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Usama",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Usama bin Zaid",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Abu Qatada",
+   "weight": 2
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Abu Usaid",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Muawiya",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Al-Miswar bin Makhrama",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "`Abdullah bin Az-Zubair",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "`Uqba bin Al-Harith",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Abu Bakr As-Siddiq",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Thabit bin Ad-Dahhak",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "`Uqba bin 'Amir",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Al-Mughira bin Shu'ba",
+   "weight": 1
+  },
+  {
+   "source": "'Abdullah bin 'Amr",
+   "target": "Khabbab",
+   "weight": 1
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Asma' bint Abu Bakr",
+   "weight": 3
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Hakim bin Hizam",
+   "weight": 2
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Um Salama",
+   "weight": 1
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Usama",
+   "weight": 1
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Usama bin Zaid",
+   "weight": 2
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "'Ubada bin As-Samit",
+   "weight": 2
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Abu Bakr As-Siddiq",
+   "weight": 1
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Abu Talha",
+   "weight": 2
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Maimuna",
+   "weight": 1
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Muawiya",
+   "weight": 1
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Hafsa",
+   "weight": 2
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "'Umar bin Al-Khattab",
+   "target": "Aslam",
+   "weight": 1
+  },
+  {
+   "source": "Asma' bint Abu Bakr",
+   "target": "Hakim bin Hizam",
+   "weight": 2
+  },
+  {
+   "source": "Asma' bint Abu Bakr",
+   "target": "Um Salama",
+   "weight": 1
+  },
+  {
+   "source": "Asma' bint Abu Bakr",
+   "target": "Usama",
+   "weight": 1
+  },
+  {
+   "source": "Asma' bint Abu Bakr",
+   "target": "Usama bin Zaid",
+   "weight": 2
+  },
+  {
+   "source": "Asma' bint Abu Bakr",
+   "target": "'Ubada bin As-Samit",
+   "weight": 1
+  },
+  {
+   "source": "Asma' bint Abu Bakr",
+   "target": "Al-Miswar bin Makhrama",
+   "weight": 1
+  },
+  {
+   "source": "Asma' bint Abu Bakr",
+   "target": "`Abdullah bin Az-Zubair",
+   "weight": 1
+  },
+  {
+   "source": "Asma' bint Abu Bakr",
+   "target": "`Uqba bin Al-Harith",
+   "weight": 1
+  },
+  {
+   "source": "Um Salama",
+   "target": "Hakim bin Hizam",
+   "weight": 1
+  },
+  {
+   "source": "Um Salama",
+   "target": "Usama",
+   "weight": 1
+  },
+  {
+   "source": "Um Salama",
+   "target": "Usama bin Zaid",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Usama",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Usama bin Zaid",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "`Abdur-Rahman bin Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Al-Qasim bin Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Abu Mas`ud",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Al-Mughira bin Shu'ba",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Hudhaifa",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Jarir",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Jarir bin Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Al-Musaiyab",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Hisham",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "Jubair bin Mut`im",
+   "weight": 1
+  },
+  {
+   "source": "Sa'd bin Abi Waqqas",
+   "target": "As-Saib bin Yazid",
+   "weight": 1
+  },
+  {
+   "source": "Abu Bakra",
+   "target": "Abu Bakr As-Siddiq",
+   "weight": 1
+  },
+  {
+   "source": "Salama bin Al-Akwa'",
+   "target": "Abu Juhaifa",
+   "weight": 1
+  },
+  {
+   "source": "Hudhaifa",
+   "target": "Abu Mas`ud",
+   "weight": 3
+  },
+  {
+   "source": "Hudhaifa",
+   "target": "Al-Mughira bin Shu'ba",
+   "weight": 1
+  },
+  {
+   "source": "Hudhaifa",
+   "target": "Jarir",
+   "weight": 1
+  },
+  {
+   "source": "Hudhaifa",
+   "target": "Jarir bin Abdullah",
+   "weight": 2
+  },
+  {
+   "source": "Hudhaifa",
+   "target": "Abu Dhar",
+   "weight": 1
+  },
+  {
+   "source": "Hudhaifa",
+   "target": "Abu Mas`ud Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Hudhaifa",
+   "target": "Khabbab",
+   "weight": 1
+  },
+  {
+   "source": "Hudhaifa",
+   "target": "Ka'b bin 'Ujra",
+   "weight": 1
+  },
+  {
+   "source": "Abu Qatada",
+   "target": "Abu Usaid",
+   "weight": 1
+  },
+  {
+   "source": "Abu Qatada",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 1
+  },
+  {
+   "source": "Abu Qatada",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "Abu Qatada",
+   "target": "`Abdullah bin Abi Qatada",
+   "weight": 1
+  },
+  {
+   "source": "Al-Mughira bin Shu'ba",
+   "target": "Abu Mas`ud",
+   "weight": 1
+  },
+  {
+   "source": "Al-Mughira bin Shu'ba",
+   "target": "Jarir",
+   "weight": 2
+  },
+  {
+   "source": "Al-Mughira bin Shu'ba",
+   "target": "Jarir bin Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Al-Mughira bin Shu'ba",
+   "target": "Khabbab",
+   "weight": 1
+  },
+  {
+   "source": "Usama bin Zaid",
+   "target": "Usama",
+   "weight": 2
+  },
+  {
+   "source": "Usama bin Zaid",
+   "target": "`Abdur-Rahman bin Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Usama bin Zaid",
+   "target": "Hakim bin Hizam",
+   "weight": 2
+  },
+  {
+   "source": "Usama bin Zaid",
+   "target": "Maimuna",
+   "weight": 2
+  },
+  {
+   "source": "`Adi bin Hatim",
+   "target": "An-Nu`man bin 'Bashir",
+   "weight": 2
+  },
+  {
+   "source": "`Adi bin Hatim",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "`Adi bin Hatim",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "`Adi bin Hatim",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "Abu Dhar",
+   "target": "'Ubada bin As-Samit",
+   "weight": 1
+  },
+  {
+   "source": "Abu Dhar",
+   "target": "Abu Usaid",
+   "weight": 1
+  },
+  {
+   "source": "Abu Dhar",
+   "target": "Abu Dharr",
+   "weight": 3
+  },
+  {
+   "source": "Abu Dhar",
+   "target": "Jarir bin Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Abu Mas`ud",
+   "target": "Jarir",
+   "weight": 2
+  },
+  {
+   "source": "Abu Mas`ud",
+   "target": "Jarir bin Abdullah",
+   "weight": 2
+  },
+  {
+   "source": "Abu Mas`ud",
+   "target": "Ka`b bin Malik",
+   "weight": 1
+  },
+  {
+   "source": "Abu Mas`ud",
+   "target": "Abu Mas`ud Al-Ansari",
+   "weight": 4
+  },
+  {
+   "source": "Abu Mas`ud",
+   "target": "Khabbab",
+   "weight": 2
+  },
+  {
+   "source": "Abu Mas`ud",
+   "target": "Zaid bin Thabit",
+   "weight": 1
+  },
+  {
+   "source": "Maimuna",
+   "target": "Abu Talha",
+   "weight": 1
+  },
+  {
+   "source": "Maimuna",
+   "target": "Muawiya",
+   "weight": 1
+  },
+  {
+   "source": "Zaid bin Thabit",
+   "target": "Salim bin `Abdullah",
+   "weight": 2
+  },
+  {
+   "source": "Zaid bin Thabit",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 1
+  },
+  {
+   "source": "Zaid bin Thabit",
+   "target": "Hafsa",
+   "weight": 1
+  },
+  {
+   "source": "Zaid bin Thabit",
+   "target": "Humaid bin `Abdur Rahman",
+   "weight": 1
+  },
+  {
+   "source": "Zaid bin Thabit",
+   "target": "Ibn Shihab",
+   "weight": 1
+  },
+  {
+   "source": "Zaid bin Thabit",
+   "target": "Zaid bin Khalid",
+   "weight": 1
+  },
+  {
+   "source": "'Ubada bin As-Samit",
+   "target": "Abu Usaid",
+   "weight": 1
+  },
+  {
+   "source": "'Ubada bin As-Samit",
+   "target": "Abu Bakr As-Siddiq",
+   "weight": 1
+  },
+  {
+   "source": "'Ubada bin As-Samit",
+   "target": "Abu Talha",
+   "weight": 1
+  },
+  {
+   "source": "Abu Juhaifa",
+   "target": "`Abdullah bin Abi `Aufa",
+   "weight": 1
+  },
+  {
+   "source": "Jubair bin Mut`im",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 1
+  },
+  {
+   "source": "Jubair bin Mut`im",
+   "target": "Al-Musaiyab",
+   "weight": 2
+  },
+  {
+   "source": "Jubair bin Mut`im",
+   "target": "Hisham",
+   "weight": 1
+  },
+  {
+   "source": "Um 'Atiyya",
+   "target": "Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Um 'Atiyya",
+   "target": "Um `Atiya",
+   "weight": 3
+  },
+  {
+   "source": "Um 'Atiyya",
+   "target": "Muhammad bin Seereen",
+   "weight": 1
+  },
+  {
+   "source": "`Imran bin Husain",
+   "target": "Samura bin Jundab",
+   "weight": 2
+  },
+  {
+   "source": "`Imran bin Husain",
+   "target": "`Imran",
+   "weight": 1
+  },
+  {
+   "source": "Jarir",
+   "target": "Jarir bin Abdullah",
+   "weight": 2
+  },
+  {
+   "source": "Jarir",
+   "target": "`Abdullah bin Mughaffal",
+   "weight": 1
+  },
+  {
+   "source": "Jarir",
+   "target": "Abu Mas`ud Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Al-Miswar bin Makhrama",
+   "target": "`Abdullah bin Az-Zubair",
+   "weight": 1
+  },
+  {
+   "source": "Al-Miswar bin Makhrama",
+   "target": "`Uqba bin Al-Harith",
+   "weight": 1
+  },
+  {
+   "source": "Al-Miswar bin Makhrama",
+   "target": "Humaid bin `Abdur Rahman",
+   "weight": 1
+  },
+  {
+   "source": "Khabbab",
+   "target": "Abu Mas`ud Al-Ansari",
+   "weight": 2
+  },
+  {
+   "source": "An-Nu`man bin 'Bashir",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "An-Nu`man bin 'Bashir",
+   "target": "Jabir bin `Abdullah Al-Ansari",
+   "weight": 2
+  },
+  {
+   "source": "An-Nu`man bin 'Bashir",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "An-Nu`man bin 'Bashir",
+   "target": "Zaid bin Arqam",
+   "weight": 1
+  },
+  {
+   "source": "An-Nu`man bin 'Bashir",
+   "target": "`Amr bin Al-Harith",
+   "weight": 1
+  },
+  {
+   "source": "An-Nu`man bin 'Bashir",
+   "target": "Jarir bin Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "`Abdullah bin Dinar",
+   "target": "`Amr bin Dinar",
+   "weight": 1
+  },
+  {
+   "source": "`Uqba bin Al-Harith",
+   "target": "`Abdullah bin Az-Zubair",
+   "weight": 1
+  },
+  {
+   "source": "Ibn Shihab",
+   "target": "Humaid bin `Abdur Rahman",
+   "weight": 1
+  },
+  {
+   "source": "Ibn Shihab",
+   "target": "Salim bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "`Abdullah bin Abi `Aufa",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "`Abdullah bin Abi `Aufa",
+   "target": "Ibn Abi `Aufa",
+   "weight": 4
+  },
+  {
+   "source": "`Abdullah bin Abi `Aufa",
+   "target": "Ash-Shaibani",
+   "weight": 1
+  },
+  {
+   "source": "Jarir bin Abdullah",
+   "target": "Abu Mas`ud Al-Ansari",
+   "weight": 1
+  },
+  {
+   "source": "Hakim bin Hizam",
+   "target": "Usama",
+   "weight": 1
+  },
+  {
+   "source": "Ibn Abi `Aufa",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "Ibn Abi `Aufa",
+   "target": "Ash-Shaibani",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira and Zaid bin Khalid",
+   "target": "Zaid bin Khalid Al-Juhani",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira and Zaid bin Khalid",
+   "target": "'Ubaidullah bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Abu Huraira and Zaid bin Khalid",
+   "target": "Zaid bin Khalid",
+   "weight": 2
+  },
+  {
+   "source": "Salim bin `Abdullah",
+   "target": "Humaid bin `Abdur Rahman",
+   "weight": 1
+  },
+  {
+   "source": "Zaid bin Khalid Al-Juhani",
+   "target": "'Ubaidullah bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "Zaid bin Khalid Al-Juhani",
+   "target": "Zaid bin Khalid",
+   "weight": 2
+  },
+  {
+   "source": "`Abdullah bin Zaid",
+   "target": "`Abbad bin Tamim",
+   "weight": 1
+  },
+  {
+   "source": "`Amra bint `Abdur-Rahman",
+   "target": "Al-Qasim bin Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Zaid bin Arqam",
+   "target": "`Amr bin Al-Harith",
+   "weight": 2
+  },
+  {
+   "source": "Al-Qasim bin Muhammad",
+   "target": "Um `Atiya",
+   "weight": 1
+  },
+  {
+   "source": "Zaid bin Khalid",
+   "target": "'Ubaidullah bin `Abdullah",
+   "weight": 1
+  },
+  {
+   "source": "`Abdullah bin Ka`b",
+   "target": "Ka`b bin Malik",
+   "weight": 2
+  },
+  {
+   "source": "`Abdullah bin Mughaffal",
+   "target": "Samura bin Jundab",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin `Abdullah Al-Ansari",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "Jabir bin `Abdullah Al-Ansari",
+   "target": "Jundub",
+   "weight": 1
+  },
+  {
+   "source": "Um `Atiya",
+   "target": "Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Usama",
+   "target": "`Abdur-Rahman bin Abu Bakr",
+   "weight": 1
+  },
+  {
+   "source": "Abu Talha",
+   "target": "Abu Bakr As-Siddiq",
+   "weight": 1
+  },
+  {
+   "source": "Abu Talha",
+   "target": "Muawiya",
+   "weight": 1
+  },
+  {
+   "source": "Jundub",
+   "target": "Ash-Shu`bi",
+   "weight": 1
+  },
+  {
+   "source": "Hafsa",
+   "target": "Muhammad",
+   "weight": 1
+  },
+  {
+   "source": "Hafsa",
+   "target": "Muhammad bin Seereen",
+   "weight": 1
+  },
+  {
+   "source": "`Asim",
+   "target": "Ash-Shaibani",
+   "weight": 1
+  },
+  {
+   "source": "Samura bin Jundab",
+   "target": "`Imran",
+   "weight": 1
+  },
+  {
+   "source": "Ash-Shu`bi",
+   "target": "`Imran",
+   "weight": 1
+  },
+  {
+   "source": "Hisham",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 1
+  },
+  {
+   "source": "Hisham",
+   "target": "Al-Musaiyab",
+   "weight": 1
+  },
+  {
+   "source": "Hisham",
+   "target": "Abu Rafi`",
+   "weight": 1
+  },
+  {
+   "source": "Al-Musaiyab",
+   "target": "Abu Sa`id Al-Khudri and Abu Huraira",
+   "weight": 1
+  },
+  {
+   "source": "Muhammad bin Seereen",
+   "target": "Muhammad",
+   "weight": 1
+  }
+ ]
+}

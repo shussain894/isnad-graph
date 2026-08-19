@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Companions of the Prophet ﷺ — Sahih al-Bukhari transmission network</title>
+<script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-1: #fcfcfb;
+    --page: #f9f9f7;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+    --hairline: #e1e0d9;
+    --border: rgba(11, 11, 11, 0.10);
+    --series-1: #2a78d6;  /* community 0 */
+    --series-2: #eda100;  /* community 1 */
+    --series-3: #008300;  /* community 2 */
+    --series-4: #e34948;  /* community 3 */
+    --series-other: #898781;
+    --edge: #e1e0d9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --surface-1: #1a1a19;
+      --page: #0d0d0d;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted: #898781;
+      --hairline: #2c2c2a;
+      --border: rgba(255, 255, 255, 0.10);
+      --series-1: #3987e5;
+      --series-2: #c98500;
+      --series-3: #008300;
+      --series-4: #e34948;
+      --series-other: #898781;
+      --edge: #2c2c2a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  header { padding: 14px 20px 10px; }
+  header h1 { font-size: 16px; margin: 0 0 2px; font-weight: 650; }
+  header p { font-size: 12.5px; margin: 0; color: var(--text-secondary); }
+  #legend {
+    display: flex; flex-wrap: wrap; gap: 6px 18px;
+    padding: 8px 20px; font-size: 12.5px; color: var(--text-secondary);
+    align-items: center;
+  }
+  .chip { display: inline-flex; align-items: center; gap: 7px; }
+  .chip .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  #cy {
+    flex: 1; margin: 0 20px 8px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  #tooltip {
+    position: fixed; pointer-events: none; display: none; z-index: 10;
+    background: var(--surface-1); color: var(--text-primary);
+    border: 1px solid var(--border); border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    padding: 8px 11px; font-size: 12.5px; line-height: 1.45; max-width: 260px;
+  }
+  #tooltip .t-name { font-weight: 650; }
+  #tooltip .t-sub { color: var(--text-secondary); }
+  details { margin: 0 20px 14px; font-size: 13px; }
+  summary { cursor: pointer; color: var(--text-secondary); padding: 4px 0; }
+  table { border-collapse: collapse; width: 100%; margin-top: 6px; }
+  th, td { text-align: left; padding: 4px 10px 4px 0; border-bottom: 1px solid var(--hairline); }
+  th { color: var(--text-muted); font-weight: 550; font-size: 12px; }
+  td { font-variant-numeric: tabular-nums; }
+  td:first-child { font-variant-numeric: normal; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Companions of the Prophet ﷺ — transmission network in Sahih al-Bukhari</h1>
+  <p>Top 100 first narrators. Node size = hadiths narrated; an edge joins two
+     Companions who share a direct student; color = Louvain community.</p>
+</header>
+<div id="legend"></div>
+<div id="cy"></div>
+<div id="tooltip"></div>
+<details id="tableview"><summary>Data table (all 100 narrators)</summary></details>
+
+<script>
+const COLORED_COMMUNITIES = 4;   // validated palette size; the rest fold to "Other"
+const css = k => getComputedStyle(document.documentElement).getPropertyValue(k).trim();
+
+function palette() {
+  return {
+    series: [css('--series-1'), css('--series-2'), css('--series-3'), css('--series-4')],
+    other: css('--series-other'),
+    edge: css('--edge'),
+    ink: css('--text-primary'),
+    surface: css('--surface-1'),
+  };
+}
+const colorOf = (community, p) =>
+  community < COLORED_COMMUNITIES ? p.series[community] : p.other;
+
+fetch('../output/graph.json')
+  .then(r => r.json())
+  .then(data => init(data))
+  .catch(() => {
+    document.getElementById('cy').insertAdjacentHTML('beforebegin',
+      '<p style="margin:20px;color:var(--text-secondary)">Could not load ' +
+      '<code>output/graph.json</code>. Serve the project root, e.g. ' +
+      '<code>python3 -m http.server</code>, then open ' +
+      '<code>http://localhost:8000/web/</code>.</p>');
+  });
+
+function init(data) {
+  const p = palette();
+  const maxCount = Math.max(...data.nodes.map(n => n.hadith_count));
+  const size = c => 14 + 56 * Math.sqrt(c / maxCount);
+
+  const cy = cytoscape({
+    container: document.getElementById('cy'),
+    elements: [
+      ...data.nodes.map(n => ({ data: { ...n, label: n.id } })),
+      ...data.edges.map(e => ({ data: e })),
+    ],
+    style: styleFor(p, size, maxCount),
+    layout: {
+      name: 'cose', animate: false, padding: 30,
+      nodeRepulsion: 90000, idealEdgeLength: 90, edgeElasticity: 60,
+      randomize: true,
+    },
+    wheelSensitivity: 0.2,
+  });
+
+  // Hover: tooltip + highlight the narrator's neighborhood.
+  const tip = document.getElementById('tooltip');
+  cy.on('mouseover', 'node', evt => {
+    const n = evt.target, d = n.data();
+    tip.innerHTML =
+      `<div class="t-name">${d.id}</div>` +
+      `<div class="t-sub">${d.hadith_count} hadiths · ${d.n_students} students · ` +
+      `${d.community < COLORED_COMMUNITIES ? 'community ' + (d.community + 1) : 'other'}</div>`;
+    tip.style.display = 'block';
+    const hood = n.closedNeighborhood();
+    cy.elements().not(hood).style('opacity', 0.15);
+    hood.style('opacity', 1);
+  });
+  cy.on('mouseout', 'node', () => {
+    tip.style.display = 'none';
+    cy.elements().style('opacity', 1);
+  });
+  cy.on('mousemove', evt => {
+    if (tip.style.display === 'block' && evt.originalEvent) {
+      tip.style.left = (evt.originalEvent.clientX + 14) + 'px';
+      tip.style.top = (evt.originalEvent.clientY + 14) + 'px';
+    }
+  });
+
+  buildLegend(data, p);
+  buildTable(data);
+
+  // Re-style when the OS theme flips; CSS variables carry the new values.
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const q = palette();
+    cy.style(styleFor(q, size, maxCount));
+    buildLegend(data, q);
+  });
+}
+
+function styleFor(p, size, maxCount) {
+  return [
+    {
+      selector: 'node',
+      style: {
+        'background-color': el => colorOf(el.data('community'), p),
+        width: el => size(el.data('hadith_count')),
+        height: el => size(el.data('hadith_count')),
+        // Direct labels on the bigger nodes are the palette's required
+        // secondary encoding; small nodes label on hover via the tooltip.
+        label: el => el.data('hadith_count') >= 25 ? el.data('label') : '',
+        'font-size': 11,
+        'font-family': 'system-ui, -apple-system, "Segoe UI", sans-serif',
+        color: p.ink,
+        'text-outline-color': p.surface,
+        'text-outline-width': 2,
+        'text-valign': 'bottom',
+        'text-margin-y': 4,
+        'border-width': 2,
+        'border-color': p.surface,   // 2px surface ring between touching marks
+      },
+    },
+    {
+      selector: 'edge',
+      style: {
+        'line-color': p.edge,
+        width: el => Math.min(1 + el.data('weight') * 0.6, 7),
+        'curve-style': 'haystack',
+      },
+    },
+  ];
+}
+
+function buildLegend(data, p) {
+  const byComm = {};
+  data.nodes.forEach(n => {
+    (byComm[n.community] ??= []).push(n);
+  });
+  const el = document.getElementById('legend');
+  el.innerHTML = '';
+  Object.keys(byComm).sort((a, b) => a - b).forEach(c => {
+    const nodes = byComm[c].sort((x, y) => y.hadith_count - x.hadith_count);
+    if (c < COLORED_COMMUNITIES) {
+      el.insertAdjacentHTML('beforeend',
+        `<span class="chip"><span class="dot" style="background:${colorOf(+c, p)}"></span>` +
+        `${nodes[0].id} circle (${nodes.length})</span>`);
+    }
+  });
+  const otherCount = data.nodes.filter(n => n.community >= COLORED_COMMUNITIES).length;
+  if (otherCount) {
+    el.insertAdjacentHTML('beforeend',
+      `<span class="chip"><span class="dot" style="background:${p.other}"></span>` +
+      `Other (${otherCount})</span>`);
+  }
+}
+
+function buildTable(data) {
+  const rows = [...data.nodes]
+    .sort((a, b) => b.hadith_count - a.hadith_count)
+    .map(n => `<tr><td>${n.id}</td><td>${n.hadith_count}</td>` +
+              `<td>${n.n_students}</td><td>${n.community + 1}</td></tr>`)
+    .join('');
+  document.getElementById('tableview').insertAdjacentHTML('beforeend',
+    `<table><thead><tr><th>Narrator</th><th>Hadiths</th><th>Students</th>` +
+    `<th>Community</th></tr></thead><tbody>${rows}</tbody></table>`);
+}
+</script>
+</body>
+</html>
