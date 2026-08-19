@@ -1,102 +1,106 @@
 Hadiths in corpus: 7345, with parsable companion: 6617
 Distinct companions: 863; kept top 100
-Edges among top 100: 523
-Louvain communities: 13 (sizes: [23, 21, 19, 17, 8, 3, 2, 2, 1, 1, 1, 1, 1])
+Edges among top 100: 582
+Louvain communities: 12 (sizes: [20, 18, 18, 16, 15, 4, 3, 2, 1, 1, 1, 1])
 
---- Community 0 (23 members) ---
-  Abu Huraira                                     966 hadiths, 177 students
-  'Aisha                                          668 hadiths,  91 students
-  Ibn 'Umar                                       531 hadiths,  67 students
-  Ibn 'Abbas                                      507 hadiths,  85 students
-  Jabir bin 'Abdullah                             248 hadiths,  68 students
-  Abu Sa'id Al-Khudri                             167 hadiths,  66 students
-  'Abdullah bin 'Amr                               59 hadiths,  36 students
-  Salama bin Al-Akwa'                              30 hadiths,   7 students
-  Abu Qatada                                       26 hadiths,  12 students
+--- Community 0 (20 members) ---
+  Anas bin Malik                                  694 hadiths, 125 students
+  Sahl bin Sa'd                                   103 hadiths,  12 students
+  Abu Bakra                                        32 hadiths,   6 students
+  'Ubada bin As-Samit                              17 hadiths,  11 students
+  Zaid bin Thabit                                  17 hadiths,   9 students
+  Um 'Atiyya                                       15 hadiths,   5 students
+  As-Saib bin Yazid                                12 hadiths,   6 students
+  `Amra bint `Abdur-Rahman                          8 hadiths,   3 students
+  Salim bin `Abdullah                               8 hadiths,   3 students
+  Al-Qasim bin Muhammad                             8 hadiths,   5 students
+  Um `Atiya                                         7 hadiths,   4 students
+  Abu Usaid                                         7 hadiths,   5 students
+  ... and 8 more
+
+--- Community 1 (18 members) ---
+  Ibn 'Umar                                       531 hadiths,  56 students
+  Jabir bin 'Abdullah                             248 hadiths,  67 students
+  Al-Bara' bin 'Azib                              118 hadiths,  20 students
+  'Abdullah bin 'Amr                               59 hadiths,  39 students
+  Salama bin Al-Akwa'                              30 hadiths,   6 students
+  `Adi bin Hatim                                   22 hadiths,   8 students
   Abu Juhaifa                                      17 hadiths,   8 students
   `Uqba bin 'Amir                                  14 hadiths,   2 students
-  As-Saib bin Yazid                                12 hadiths,   6 students
-  ... and 11 more
+  An-Nu`man bin 'Bashir                            10 hadiths,   7 students
+  `Abdullah bin Dinar                              10 hadiths,   8 students
+  `Abdullah bin Zaid                                8 hadiths,   3 students
+  Zaid bin Arqam                                    8 hadiths,   4 students
+  ... and 6 more
 
---- Community 1 (21 members) ---
+--- Community 2 (18 members) ---
+  Abu Huraira                                     966 hadiths, 157 students
+  'Aisha                                          668 hadiths,  85 students
+  Ibn 'Abbas                                      507 hadiths,  84 students
+  Abu Sa'id Al-Khudri                             167 hadiths,  66 students
+  Abu Qatada                                       26 hadiths,  12 students
+  Jubair bin Mut`im                                15 hadiths,   5 students
+  `Abdullah bin Abi Qatada                         11 hadiths,   1 students
+  Abu Huraira and Zaid bin Khalid                   9 hadiths,   5 students
+  Zaid bin Khalid Al-Juhani                         8 hadiths,   4 students
+  Zaid bin Khalid                                   8 hadiths,   5 students
+  Abu Aiyub Al-Ansari                               6 hadiths,   6 students
+  Hisham                                            6 hadiths,   4 students
+  ... and 6 more
+
+--- Community 3 (16 members) ---
   'Abdullah bin Mas'ud                            257 hadiths,  57 students
   Abu Musa Al-Ash'ari                             112 hadiths,  30 students
   'Ali bin Abi Talib                               63 hadiths,  25 students
-  Sa'd bin Abi Waqqas                              34 hadiths,  15 students
-  Hudhaifa                                         28 hadiths,  13 students
+  Sa'd bin Abi Waqqas                              34 hadiths,  13 students
+  Hudhaifa                                         28 hadiths,  12 students
   Al-Mughira bin Shu'ba                            23 hadiths,  11 students
-  Abu Dhar                                         19 hadiths,   8 students
   Abu Mas`ud                                       19 hadiths,  13 students
-  Jubair bin Mut`im                                15 hadiths,   5 students
+  Abu Dhar                                         19 hadiths,   8 students
   Jarir                                            14 hadiths,   7 students
   Khabbab                                          11 hadiths,   4 students
-  Jarir bin Abdullah                                9 hadiths,   5 students
-  ... and 9 more
+  Abu Mas`ud Al-Ansari                              9 hadiths,   7 students
+  Jarir bin Abdullah                                9 hadiths,   4 students
+  ... and 4 more
 
---- Community 2 (19 members) ---
-  Anas bin Malik                                  694 hadiths, 128 students
-  Sahl bin Sa'd                                   103 hadiths,  12 students
-  Zaid bin Thabit                                  17 hadiths,  11 students
-  Um 'Atiyya                                       15 hadiths,   5 students
-  `Abdullah bin Abi `Aufa                          10 hadiths,   7 students
+--- Community 4 (15 members) ---
+  'Umar bin Al-Khattab                             45 hadiths,  21 students
+  Asma' bint Abu Bakr                              39 hadiths,  12 students
+  Um Salama                                        37 hadiths,  14 students
+  Usama bin Zaid                                   22 hadiths,  11 students
+  Maimuna                                          18 hadiths,   4 students
+  Al-Miswar bin Makhrama                           12 hadiths,   5 students
   Ibn Shihab                                       10 hadiths,   9 students
-  Ibn Abi `Aufa                                     9 hadiths,   8 students
-  `Amra bint `Abdur-Rahman                          8 hadiths,   3 students
-  Al-Qasim bin Muhammad                             8 hadiths,   5 students
-  Salim bin `Abdullah                               8 hadiths,   3 students
-  Um `Atiya                                         7 hadiths,   4 students
-  `Abdul `Aziz                                      7 hadiths,   4 students
-  ... and 7 more
-
---- Community 3 (17 members) ---
-  'Umar bin Al-Khattab                             45 hadiths,  23 students
-  Asma' bint Abu Bakr                              39 hadiths,  15 students
-  Um Salama                                        37 hadiths,  15 students
-  Abu Bakra                                        32 hadiths,   5 students
-  Usama bin Zaid                                   22 hadiths,  12 students
-  Maimuna                                          18 hadiths,   5 students
-  'Ubada bin As-Samit                              17 hadiths,  12 students
-  Al-Miswar bin Makhrama                           12 hadiths,   7 students
   `Uqba bin Al-Harith                              10 hadiths,   2 students
-  Hakim bin Hizam                                   9 hadiths,   5 students
-  Aslam                                             8 hadiths,   3 students
+  Hakim bin Hizam                                   9 hadiths,   4 students
+  Abu Humaid As-Sa`idi                              8 hadiths,   4 students
+  Aslam                                             8 hadiths,   2 students
   Abu Talha                                         7 hadiths,   4 students
-  ... and 5 more
+  ... and 3 more
 
---- Community 4 (8 members) ---
-  Al-Bara' bin 'Azib                              118 hadiths,  21 students
-  `Adi bin Hatim                                   22 hadiths,   8 students
-  An-Nu`man bin 'Bashir                            10 hadiths,   7 students
-  Zaid bin Arqam                                    8 hadiths,   4 students
-  Jundub                                            7 hadiths,   5 students
-  Jabir bin `Abdullah Al-Ansari                     7 hadiths,   6 students
-  Ash-Shu`bi                                        6 hadiths,   4 students
-  `Amr bin Al-Harith                                5 hadiths,   3 students
+--- Community 5 (4 members) ---
+  `Abdullah bin Abi `Aufa                          10 hadiths,   8 students
+  Ibn Abi `Aufa                                     9 hadiths,   8 students
+  `Asim                                             6 hadiths,   4 students
+  Ash-Shaibani                                      6 hadiths,   4 students
 
---- Community 5 (3 members) ---
-  `Imran bin Husain                                14 hadiths,  10 students
+--- Community 6 (3 members) ---
+  `Imran bin Husain                                14 hadiths,   9 students
   Samura bin Jundab                                 6 hadiths,   3 students
   `Imran                                            5 hadiths,   4 students
 
---- Community 6 (2 members) ---
-  `Abdullah bin Zaid                                8 hadiths,   3 students
-  `Abbad bin Tamim                                  6 hadiths,   3 students
-
 --- Community 7 (2 members) ---
-  `Abdullah bin Ka`b                                8 hadiths,   6 students
+  `Abdullah bin Ka`b                                8 hadiths,   7 students
   Ka`b bin Malik                                    8 hadiths,   7 students
 
 --- Community 8 (1 members) ---
-  Rafi` bin Khadij                                 12 hadiths,   9 students
+  Jabir bin Samura                                  7 hadiths,   4 students
 
 --- Community 9 (1 members) ---
-  Abu Humaid As-Sa`idi                              8 hadiths,   4 students
+  Rafi` bin Khadij                                 12 hadiths,   9 students
 
 --- Community 10 (1 members) ---
-  Jabir bin Samura                                  7 hadiths,   4 students
+  Sa`id                                             5 hadiths,   3 students
 
 --- Community 11 (1 members) ---
   Suwaid bin An-Nu`man                              7 hadiths,   2 students
-
---- Community 12 (1 members) ---
-  Sa`id                                             5 hadiths,   3 students

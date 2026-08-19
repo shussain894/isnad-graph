@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full transmission network — Sahih al-Bukhari</title>
+<script src="https://cdn.jsdelivr.net/npm/graphology@0.25.4/dist/graphology.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sigma@3.0.2/dist/sigma.min.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-1: #fcfcfb;
+    --page: #f9f9f7;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+    --hairline: #e1e0d9;
+    --border: rgba(11, 11, 11, 0.10);
+    --series-1: #2a78d6;
+    --series-2: #eda100;
+    --series-3: #008300;
+    --series-4: #e34948;
+    --series-other: #898781;
+    --edge: #d9d8d1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --surface-1: #1a1a19;
+      --page: #0d0d0d;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted: #898781;
+      --hairline: #2c2c2a;
+      --border: rgba(255, 255, 255, 0.10);
+      --series-1: #3987e5;
+      --series-2: #c98500;
+      --series-3: #008300;
+      --series-4: #e34948;
+      --series-other: #898781;
+      --edge: #333331;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; height: 100vh; display: flex; flex-direction: column;
+    background: var(--page); color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  header { padding: 13px 20px 8px; }
+  h1 { font-size: 16px; margin: 0 0 2px; font-weight: 650; }
+  header p { font-size: 12.5px; margin: 0; color: var(--text-secondary); }
+  #controls {
+    display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+    padding: 8px 20px; font-size: 12.5px; color: var(--text-secondary);
+  }
+  #search {
+    font: inherit; padding: 4px 9px; min-width: 210px;
+    background: var(--surface-1); color: var(--text-primary);
+    border: 1px solid var(--border); border-radius: 6px;
+  }
+  .chip { display: inline-flex; align-items: center; gap: 7px; }
+  .chip .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .chip.dim .dot { opacity: .35; }
+  label.toggle { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  #cy {
+    flex: 1; margin: 0 20px 8px; position: relative;
+    background: var(--surface-1);
+    border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden;
+  }
+  #tooltip {
+    position: fixed; pointer-events: none; display: none; z-index: 10;
+    background: var(--surface-1); color: var(--text-primary);
+    border: 1px solid var(--border); border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    padding: 8px 11px; font-size: 12.5px; line-height: 1.5; max-width: 280px;
+  }
+  #tooltip .t-name { font-weight: 650; font-size: 14px; }
+  #tooltip .t-sub { color: var(--text-secondary); }
+  #tooltip .t-flag { color: var(--text-muted); font-style: italic; }
+  #status { padding: 0 20px 6px; font-size: 12px; color: var(--text-muted); }
+  details { margin: 0 20px 14px; font-size: 13px; }
+  summary { cursor: pointer; color: var(--text-secondary); padding: 4px 0; }
+  table { border-collapse: collapse; width: 100%; margin-top: 6px; }
+  th, td { text-align: left; padding: 4px 10px 4px 0; border-bottom: 1px solid var(--hairline); }
+  th { color: var(--text-muted); font-weight: 550; font-size: 12px; }
+  td.num { font-variant-numeric: tabular-nums; }
+  .ar { font-size: 15px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Full transmission network — Sahih al-Bukhari</h1>
+  <p>Every narrator named in an isnad, all generations. Node size = hadiths
+     they appear in; arrows run teacher → student; colour = the four largest
+     transmission clusters.</p>
+</header>
+<div id="controls">
+  <input id="search" type="search" placeholder="Search narrator (Arabic)…" autocomplete="off" list="names">
+  <datalist id="names"></datalist>
+  <span id="legend" style="display:contents"></span>
+  <label class="toggle"><input type="checkbox" id="hideUnres"> hide unresolved</label>
+</div>
+<div id="cy"></div>
+<div id="status">Loading…</div>
+<details id="tableview"><summary>Data table — top 50 narrators by betweenness</summary></details>
+<div id="tooltip"></div>
+
+<script>
+const TOP_COMMUNITIES = 4;
+const css = k => getComputedStyle(document.documentElement).getPropertyValue(k).trim();
+const palette = () => ({
+  series: [css('--series-1'), css('--series-2'), css('--series-3'), css('--series-4')],
+  other: css('--series-other'),
+  edge: css('--edge'),
+  ink: css('--text-primary'),
+  muted: css('--text-muted'),
+});
+const colorOf = (c, p) => (c < TOP_COMMUNITIES ? p.series[c] : p.other);
+
+let graph, renderer, DATA, hovered = null, hideUnresolved = false;
+
+fetch('../output/full_graph.json')
+  .then(r => r.json())
+  .then(init)
+  .catch(() => {
+    document.getElementById('status').textContent =
+      'Could not load output/full_graph.json — serve the project root ' +
+      '(python3 -m http.server) and open http://localhost:8000/web/full.html';
+  });
+
+function init(data) {
+  DATA = data;
+  const p = palette();
+  const maxChains = Math.max(...data.nodes.map(n => n.chains));
+
+  graph = new graphology.Graph({ type: 'directed' });
+  for (const n of data.nodes) {
+    graph.addNode(n.id, {
+      x: n.x, y: n.y,
+      size: 1.5 + 15 * Math.sqrt(n.chains / maxChains),
+      label: n.id,
+      color: colorOf(n.community, p),
+      chains: n.chains, betweenness: n.betweenness, pagerank: n.pagerank,
+      inDeg: n.in, outDeg: n.out,
+      community: n.community, unresolved: n.unresolved,
+    });
+  }
+  for (const e of data.edges) {
+    if (graph.hasNode(e.s) && graph.hasNode(e.t) && !graph.hasEdge(e.s, e.t)) {
+      graph.addEdge(e.s, e.t, { weight: e.w, size: Math.min(0.3 + e.w * 0.08, 2.4) });
+    }
+  }
+
+  renderer = new Sigma(graph, document.getElementById('cy'), {
+    renderEdgeLabels: false,
+    defaultEdgeType: 'arrow',
+    labelFont: 'system-ui, -apple-system, "Segoe UI", sans-serif',
+    labelSize: 12,
+    labelWeight: '600',
+    labelColor: { color: p.ink },
+    labelRenderedSizeThreshold: 5.5,
+    minCameraRatio: 0.03,
+    maxCameraRatio: 1.6,
+    defaultEdgeColor: p.edge,
+  });
+
+  applyReducers();
+  wireInteractions();
+  buildLegend(p);
+  buildTable(data);
+  document.getElementById('status').textContent =
+    `${data.meta.nodes.toLocaleString()} narrators · ` +
+    `${data.meta.edges.toLocaleString()} teacher→student links · ` +
+    `${data.meta.rows_used.toLocaleString()} of ${data.meta.rows_total.toLocaleString()} hadiths parsed · ` +
+    `${data.meta.unresolved_nodes} unresolved (shown faded) · ` +
+    `identity is name-string based, not yet entity-resolved`;
+
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const q = palette();
+    graph.forEachNode((id, a) => graph.setNodeAttribute(id, 'color', colorOf(a.community, q)));
+    renderer.setSetting('defaultEdgeColor', q.edge);
+    renderer.setSetting('labelColor', { color: q.ink });
+    buildLegend(q);
+    renderer.refresh();
+  });
+}
+
+// Nodes keep their colour; hovering fades everything outside the neighbourhood.
+function applyReducers() {
+  renderer.setSetting('nodeReducer', (id, data) => {
+    const res = { ...data };
+    if (hideUnresolved && data.unresolved) return { ...res, hidden: true };
+    if (data.unresolved) res.color = fade(res.color, 0.45);
+    if (hovered) {
+      const near = id === hovered || graph.areNeighbors(id, hovered);
+      if (!near) { res.color = fade(res.color, 0.12); res.label = null; res.zIndex = 0; }
+      else { res.zIndex = 2; res.forceLabel = true; }
+    }
+    return res;
+  });
+  renderer.setSetting('edgeReducer', (id, data) => {
+    const res = { ...data };
+    const [s, t] = graph.extremities(id);
+    if (hideUnresolved &&
+        (graph.getNodeAttribute(s, 'unresolved') || graph.getNodeAttribute(t, 'unresolved'))) {
+      return { ...res, hidden: true };
+    }
+    if (hovered) {
+      if (s === hovered || t === hovered) { res.color = css('--text-muted'); res.zIndex = 1; }
+      else return { ...res, hidden: true };
+    }
+    return res;
+  });
+}
+
+function fade(hex, a) {
+  const h = hex.replace('#', '');
+  const v = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+  const n = parseInt(v, 16);
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${a})`;
+}
+
+function wireInteractions() {
+  const tip = document.getElementById('tooltip');
+  renderer.on('enterNode', ({ node }) => {
+    hovered = node;
+    const a = graph.getNodeAttributes(node);
+    tip.innerHTML =
+      `<div class="t-name ar">${node}</div>` +
+      `<div class="t-sub">in ${a.chains} hadith chains · ` +
+      `${a.inDeg} teacher${a.inDeg === 1 ? '' : 's'} · ` +
+      `${a.outDeg} student${a.outDeg === 1 ? '' : 's'}</div>` +
+      `<div class="t-sub">betweenness ${a.betweenness.toFixed(4)} · ` +
+      `pagerank ${a.pagerank.toFixed(5)}</div>` +
+      (a.unresolved
+        ? `<div class="t-flag">unresolved — named only by relation in the isnad</div>` : '');
+    tip.style.display = 'block';
+    renderer.refresh();
+  });
+  renderer.on('leaveNode', () => {
+    hovered = null; tip.style.display = 'none'; renderer.refresh();
+  });
+  document.addEventListener('mousemove', e => {
+    if (tip.style.display === 'block') {
+      const pad = 16;
+      tip.style.left = Math.min(e.clientX + pad, innerWidth - 300) + 'px';
+      tip.style.top = Math.min(e.clientY + pad, innerHeight - 110) + 'px';
+    }
+  });
+
+  document.getElementById('hideUnres').addEventListener('change', e => {
+    hideUnresolved = e.target.checked;
+    renderer.refresh();
+  });
+
+  const search = document.getElementById('search');
+  const list = document.getElementById('names');
+  list.innerHTML = DATA.nodes.slice(0, 600)
+    .map(n => `<option value="${n.id}">`).join('');
+  search.addEventListener('change', () => {
+    const q = search.value.trim();
+    if (!graph.hasNode(q)) return;
+    const { x, y } = graph.getNodeAttributes(q);
+    renderer.getCamera().animate({ x, y, ratio: 0.12 }, { duration: 500 });
+    hovered = q;
+    renderer.refresh();
+  });
+}
+
+function buildLegend(p) {
+  const el = document.getElementById('legend');
+  const counts = {};
+  DATA.nodes.forEach(n => {
+    const k = n.community < TOP_COMMUNITIES ? n.community : 'other';
+    counts[k] = (counts[k] || 0) + 1;
+  });
+  const names = DATA.nodes.reduce((acc, n) => {
+    if (n.community < TOP_COMMUNITIES && !acc[n.community]) acc[n.community] = n.id;
+    return acc;
+  }, {});
+  let html = '';
+  for (let c = 0; c < TOP_COMMUNITIES; c++) {
+    html += `<span class="chip"><span class="dot" style="background:${p.series[c]}"></span>` +
+            `<span class="ar">${names[c] || ''}</span> cluster (${counts[c] || 0})</span>`;
+  }
+  html += `<span class="chip"><span class="dot" style="background:${p.other}"></span>` +
+          `Other (${counts.other || 0})</span>`;
+  html += `<span class="chip dim"><span class="dot" style="background:${p.other}"></span>` +
+          `Unresolved (${DATA.meta.unresolved_nodes}), faded</span>`;
+  el.innerHTML = html;
+}
+
+function buildTable(data) {
+  const rows = [...data.nodes]
+    .sort((a, b) => b.betweenness - a.betweenness)
+    .slice(0, 50)
+    .map((n, i) => `<tr><td class="num">${i + 1}</td><td class="ar">${n.id}</td>` +
+      `<td class="num">${n.chains}</td><td class="num">${n.in}</td>` +
+      `<td class="num">${n.out}</td><td class="num">${n.betweenness.toFixed(4)}</td>` +
+      `<td>${n.unresolved ? 'unresolved' : ''}</td></tr>`).join('');
+  document.getElementById('tableview').insertAdjacentHTML('beforeend',
+    `<p style="color:var(--text-secondary);margin:6px 0">Full table for all
+     ${data.meta.nodes.toLocaleString()} narrators:
+     <code>output/centrality.csv</code></p>` +
+    `<table><thead><tr><th>#</th><th>Narrator</th><th>Chains</th><th>Teachers</th>` +
+    `<th>Students</th><th>Betweenness</th><th></th></tr></thead><tbody>${rows}</tbody></table>`);
+}
+</script>
+</body>
+</html>

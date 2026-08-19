@@ -1,7 +1,14 @@
-# Companions transmission network — Sahih al-Bukhari
+# Isnad graph — Sahih al-Bukhari
 
-Interactive graph of the top 100 first narrators (Companions) in Sahih
-al-Bukhari, clustered with Louvain community detection.
+Interactive graphs of hadith transmission in Sahih al-Bukhari, clustered with
+Louvain community detection. Two views ship today:
+
+| View | Page | Scope |
+|---|---|---|
+| Companions | `web/index.html` | top 100 first narrators, undirected co-transmission |
+| Full network | `web/full.html` | all 3,809 named transmitters, directed teacher → student |
+
+### Companions view (Stage 0)
 
 - **Nodes** — Companions, sized by number of hadiths they narrate.
 - **Edges** — two Companions are linked when the same student (the second
@@ -10,23 +17,83 @@ al-Bukhari, clustered with Louvain community detection.
 - **Color** — Louvain communities (weighted). The four largest are colored;
   smaller fragments fold into gray "Other".
 
+### Full network view (Stage 1)
+
+- **Nodes** — every transmitter named anywhere in an isnad, all generations,
+  sized by how many hadiths they appear in.
+- **Edges** — directed teacher → student, taken from adjacent positions in a
+  chain; weight = number of hadiths carrying that hand-off.
+- **Color** — the four largest Louvain communities; everything else gray.
+  Unresolved placeholders (see below) are drawn faded and can be hidden.
+- **Layout** — two-level: the communities are placed relative to one another,
+  then each is laid out inside its own patch. A single flat force layout of
+  ~3,800 nodes collapses into one disc and hides the cluster structure.
+
 ## Layout
 
 ```
-data/bukhari/          97 chapter CSVs from the LK Hadith Corpus
-scripts/build_graph.py parse -> graph -> Louvain -> output/
-output/graph.json      nodes, edges, communities (input to the web viewer)
-output/summary.txt     human-readable community breakdown
-web/index.html         Cytoscape.js viewer (light + dark)
+data/bukhari/               97 chapter CSVs from the LK Hadith Corpus
+scripts/isnad_parse.py      shared Arabic normalization + chain parsing
+scripts/build_graph.py      Stage 0: Companions -> Louvain -> output/
+scripts/build_full_graph.py Stage 1: full chains -> centrality -> output/
+output/graph.json           Stage 0 nodes, edges, communities
+output/summary.txt          Stage 0 community breakdown
+output/full_graph.json      Stage 1 nodes (with layout), edges, metrics
+output/centrality.csv       Stage 1 ranking: betweenness, PageRank, degrees
+output/full_summary.txt     Stage 1 parse, ambiguity and centrality report
+web/index.html              Cytoscape.js viewer (light + dark)
+web/full.html               sigma.js/WebGL viewer (light + dark)
 ```
+
+Both scripts are deterministic: identical inputs give byte-identical outputs.
+That needs care, because Python randomizes set iteration order per process and
+Louvain's result depends on the order it visits nodes — so anything feeding
+node insertion order is sorted first.
 
 ## Run
 
 ```sh
-.venv/bin/python scripts/build_graph.py   # rebuild output/
-python3 -m http.server                    # from the project root
-# open http://localhost:8000/web/
+.venv/bin/python scripts/build_graph.py       # rebuild Stage 0 output/
+.venv/bin/python scripts/build_full_graph.py  # rebuild Stage 1 output/ (~15s)
+python3 -m http.server                        # from the project root
+# open http://localhost:8000/web/  and  http://localhost:8000/web/full.html
 ```
+
+## Stage 1 results
+
+**Parse rate.** 7,312 of 7,345 hadith rows (99.6%) yield at least one
+teacher → student edge. Of the 33 that do not: 2 rows carry no Arabic isnad at
+all, 3 have isnad text that produces no usable segment, and 28 name only a
+single transmitter, which is a chain with nothing to link. 7,396 chains are
+parsed in total — more than one per row because 56 rows contain a taḥwīl
+marker (`ح`, a switch to a parallel chain) and are split in two.
+
+**Graph.** 3,809 nodes, 9,712 directed edges, 9 weakly connected components
+(the giant one holds 3,796 nodes, 99.7%), 28 Louvain communities.
+
+**Ambiguity.** Identity at this stage is the normalized name string, so one
+man written two ways is two nodes and two men written the same way are one
+node. The scale of the problem, to be fixed in Stage 2:
+
+| Measure | Nodes | Chain appearances |
+|---|---|---|
+| Single-token names (`شعبة`, `سفيان`) | 408 | 14,086 |
+| Kunya/ibn-only names (`ابو اسامة`) | 299 | 6,351 |
+| Unresolved relative placeholders | 317 | — |
+
+The largest hot spots are `شعبة` (760 chains), `سفيان` (681), `عايشة` (641),
+`مالك` (606) and `الزهري` (598). The splitting is visible too: `الزهري` (598)
+and `ابن شهاب` (625) are the same man, as are `انس` (351) and `انس بن مالك`
+(342). Nothing is merged on a guess — the counts are reported as they are.
+
+**Sanity benchmark** (the roadmap's parse check): by betweenness, سفيان ranks
+2nd, شعبة 3rd, الزهري 5th, ابي هريرة 6th, ابن عباس 7th, ابن شهاب 8th,
+عايشة 9th and مالك 17th. That is the expected shape, so the chain direction
+and segmentation are behaving.
+
+`النبي` ranks 1st on only 43 chains. That is real structure rather than a bug:
+he is the source every chain points back to, so the few chains that name him
+explicitly bridge otherwise separate Companion subtrees.
 
 ## Method notes & known limitations
 
@@ -38,8 +105,21 @@ python3 -m http.server                    # from the project root
   translator listed as first narrator. Both lists live at the top of
   `scripts/build_graph.py`. Rare variants in the long tail may still split or
   mislabel a narrator — a proper fix needs a rijal database (phase 2).
-- Chains whose second narrator is a relative reference ("from his father")
-  are counted for hadith totals but skipped for edges.
+- An isnad is written student-first: segment 0 is al-Bukhari's own shaykh and
+  the last segment is the Companion, so transmission runs from the *end* of the
+  parsed list toward the start. Both scripts rely on this.
+- Relative references ("from his father") cannot be resolved to a name without
+  a rijal database. Stage 0 skips them for edges; Stage 1 keeps the chain
+  intact with a contextual placeholder — `ابيه ⟨هشام⟩` is "the father of
+  Hisham", which is what the text actually says. Placeholders are flagged
+  unresolved, drawn faded, and never merged onto one shared "father" node.
+  They land where they should: `ابيه ⟨هشام⟩` sits beside ʿUrwa, who genuinely
+  is Hisham's father.
+- Taḥwīl (`ح`) marks a switch to a parallel chain inside one isnad. Treating it
+  as an ordinary token would silently weld two chains together and invent an
+  edge that no source states, so the parser splits there instead. The known
+  cost is that the first chain loses the shared tail after the marker; that
+  under-counts some edges, which is preferred to inventing them.
 - Data source: [LK Hadith Corpus](https://github.com/ShathaTm/LK-Hadith-Corpus)
   (Bukhari, 7,345 hadith rows; 6,617 with a resolvable Companion).
 
@@ -75,7 +155,9 @@ then stop and regroup before starting the next. Never mix stages in one PR.
 
 Top-100 Companion graph, shared-student edges, Louvain, Cytoscape viewer.
 
-### Stage 1 — Full Bukhari transmission graph
+### Stage 1 — Full Bukhari transmission graph ✅ (done)
+
+Results and measured rates are in [Stage 1 results](#stage-1-results) above.
 
 **Goal:** every transmitter in every isnad of Bukhari, all generations, as a
 directed graph (teacher → student along each chain, weight = co-occurrence

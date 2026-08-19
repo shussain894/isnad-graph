@@ -17,6 +17,8 @@ from pathlib import Path
 import networkx as nx
 import pandas as pd
 
+from isnad_parse import is_relative, parse_chains
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "bukhari"
 OUT = ROOT / "output"
@@ -129,61 +131,20 @@ def extract_companion(english_isnad) -> str | None:
 
 
 # ----------------------------------------------------------------- Arabic side
-
-AR_DIACRITICS = re.compile(r"[ً-ٰٟـ]")
-AR_HONORIFICS = re.compile(
-    r"(رضي الله عنهما|رضي الله عنها|رضي الله عنهم|رضي الله عنه"
-    r"|صلي الله عليه وسلم|عليه السلام)"
-)
-# Verbs/particles that separate one transmitter from the next in an isnad.
-SPLITTERS = {
-    "حدثنا", "حدثني", "حدثتنا", "حدثتني", "اخبرنا", "اخبرني", "اخبرته",
-    "انبانا", "انباني", "سمعت", "سمع", "عن", "ان", "انه", "انها",
-    "قال", "قالت", "قالا", "قالوا", "يقول", "تقول", "اني", "و", "ح",
-}
-# Relative references that cannot be resolved without a rijal database.
-RELATIVE = {"ابيه", "ابيها", "امه", "امها", "جده", "جدته", "عمه", "اخيه", "مولاه"}
+# Normalization and chain parsing live in isnad_parse.py, shared with Stage 1.
 
 
-def norm_arabic(text: str) -> str:
-    s = AR_DIACRITICS.sub("", text)
-    s = s.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا")
-    s = s.replace("ى", "ي").replace("ئ", "ي").replace("ؤ", "و")
-    s = AR_HONORIFICS.sub(" ", s)
-    s = re.sub(r"[،,.:()\[\]~ـ‏‎]", " ", s)
-    s = re.sub(r"\s+", " ", s).strip()
-    return s
-
-
-def isnad_segments(arabic_isnad) -> list[str]:
-    """Split a normalized isnad into transmitter-name segments, in text order
-    (Bukhari's shaykh first, Companion last)."""
-    if not isinstance(arabic_isnad, str):
+def extract_students(arabic_isnad) -> list[str]:
+    """The Companion's direct students = transmitters at the second-to-last
+    level of the first chain. Relative references ("from his father") are
+    skipped here: Stage 0 identifies students by name only."""
+    chains = parse_chains(arabic_isnad)
+    if not chains or len(chains[0]) < 2:
         return []
-    tokens = norm_arabic(arabic_isnad).split()
-    segments, current = [], []
-    for tok in tokens:
-        if tok in SPLITTERS:
-            if current:
-                segments.append(" ".join(current))
-                current = []
-        else:
-            current.append(tok)
-    if current:
-        segments.append(" ".join(current))
-    return segments
-
-
-def extract_student(arabic_isnad) -> str | None:
-    """The Companion's direct student = second-to-last transmitter."""
-    segs = isnad_segments(arabic_isnad)
-    if len(segs) < 2:
-        return None
-    student = segs[-2]
-    first_word = student.split()[0] if student else ""
-    if first_word in RELATIVE or len(student) < 3:
-        return None
-    return student
+    return [
+        name for name in chains[0][-2]
+        if not is_relative(name) and len(name) >= 3
+    ]
 
 
 # ---------------------------------------------------------------------- build
@@ -202,21 +163,21 @@ def main() -> None:
             continue
         hadith_counts[companion] += 1
         parsed += 1
-        student = extract_student(row["Arabic_Isnad"])
-        if student:
-            students[companion].add(student)
+        students[companion].update(extract_students(row["Arabic_Isnad"]))
 
     top = [name for name, _ in hadith_counts.most_common(TOP_N)]
-    top_set = set(top)
 
     # Invert: student -> companions (restricted to top 100) they narrate from.
+    # Iteration is over sorted names, not raw sets: insertion order decides the
+    # order Louvain visits nodes, and Python randomises set order per process,
+    # so unsorted iteration makes the communities differ between identical runs.
     teachers_of: dict[str, set[str]] = defaultdict(set)
-    for companion in top_set:
-        for s in students[companion]:
+    for companion in top:
+        for s in sorted(students[companion]):
             teachers_of[s].add(companion)
 
     shared: Counter[tuple[str, str]] = Counter()
-    for s, comps in teachers_of.items():
+    for s, comps in sorted(teachers_of.items()):
         comps = sorted(comps)
         for i in range(len(comps)):
             for j in range(i + 1, len(comps)):
@@ -229,7 +190,7 @@ def main() -> None:
         G.add_edge(a, b, weight=w)
 
     communities = nx.community.louvain_communities(G, weight="weight", seed=SEED)
-    communities = sorted(communities, key=len, reverse=True)
+    communities = sorted(communities, key=lambda c: (-len(c), min(c)))
     comm_of = {n: i for i, c in enumerate(communities) for n in c}
 
     OUT.mkdir(exist_ok=True)

@@ -1,0 +1,82 @@
+STAGE 1 — full Bukhari transmission graph
+====================================================
+
+PARSE
+  hadith rows                 7345
+  rows yielding >=1 edge      7312  (99.6%)
+  rows with no Arabic isnad   2
+  rows isnad present, unparsed 3
+  rows with a single narrator 28
+  rows with parallel chains (tahwil)  56
+  chains parsed               7396
+
+GRAPH
+  nodes (distinct name strings)  3809
+  edges (teacher -> student)     9712
+  unresolved placeholder nodes   317
+  weakly connected components    9
+  Louvain communities            28 (top sizes: [537, 456, 384, 372, 339, 329, 233, 207])
+
+AMBIGUITY (string identity, to be fixed in Stage 2)
+  single-token names   408 nodes, 14086 chain appearances
+  kunya/ibn-only names 299 nodes, 6351 chain appearances
+  worst hot spots (one string, probably several men):
+       760 chains  شعبة
+       681 chains  سفيان
+       641 chains  عايشة
+       606 chains  مالك
+       598 chains  الزهري
+       408 chains  نافع
+       407 chains  الليث
+       388 chains  مسدد
+       384 chains  يحيي
+       366 chains  هشام
+       351 chains  انس
+       323 chains  الاعمش
+       271 chains  شعيب
+       270 chains  قتادة
+       269 chains  اسماعيل
+
+TOP 25 BY BETWEENNESS (bridge role in transmission)
+    1. النبي                                  betw 0.1210  chains 43
+    2. سفيان                                  betw 0.0721  chains 681
+    3. شعبة                                   betw 0.0620  chains 760
+    4. عبد الله                               betw 0.0571  chains 457
+    5. الزهري                                 betw 0.0524  chains 598
+    6. ابي هريرة                              betw 0.0460  chains 770
+    7. ابن عباس                               betw 0.0431  chains 548
+    8. ابن شهاب                               betw 0.0426  chains 625
+    9. عايشة                                  betw 0.0372  chains 641
+   10. محمد                                   betw 0.0353  chains 175
+   11. ابراهيم                                betw 0.0292  chains 174
+   12. انس بن مالك                            betw 0.0283  chains 342
+   13. يحيي                                   betw 0.0276  chains 384
+   14. ابن عمر                                betw 0.0246  chains 381
+   15. هشام                                   betw 0.0232  chains 366
+   16. الاعمش                                 betw 0.0232  chains 323
+   17. مالك                                   betw 0.0225  chains 606
+   18. ابن جريج                               betw 0.0225  chains 177
+   19. انس                                    betw 0.0224  chains 351
+   20. الليث                                  betw 0.0207  chains 407
+   21. يحيي بن سعيد                           betw 0.0199  chains 144
+   22. اسماعيل                                betw 0.0199  chains 269
+   23. سليمان                                 betw 0.0198  chains 125
+   24. نافع                                   betw 0.0197  chains 408
+   25. علي                                    betw 0.0180  chains 92
+
+TOP 15 BY PAGERANK (transmission tracing back through them)
+    1. ابي هريرة                              pr 0.01951  chains 770
+    2. النبي                                  pr 0.01825  chains 43
+    3. ابن عباس                               pr 0.01561  chains 548
+    4. عايشة                                  pr 0.01534  chains 641
+    5. ابن عمر                                pr 0.00965  chains 381
+    6. الزهري                                 pr 0.00947  chains 598
+    7. عبد الله                               pr 0.00838  chains 457
+    8. انس بن مالك                            pr 0.00795  chains 342
+    9. سفيان                                  pr 0.00741  chains 681
+   10. عمر                                    pr 0.00716  chains 42
+   11. ابن شهاب                               pr 0.00706  chains 625
+   12. انس                                    pr 0.00694  chains 351
+   13. شعبة                                   pr 0.00668  chains 760
+   14. ابا هريرة                              pr 0.00634  chains 198
+   15. نافع                                   pr 0.00605  chains 408
