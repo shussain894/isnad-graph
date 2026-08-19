@@ -88,7 +88,7 @@
 <header>
   <h1>Companions of the Prophet ﷺ — transmission network in Sahih al-Bukhari</h1>
   <p>Top 100 first narrators. Node size = hadiths narrated; an edge joins two
-     Companions who share a direct student; color = Louvain community.</p>
+     Companions who share a direct student; colour = Louvain community.</p>
 </header>
 <div id="legend"></div>
 <div id="cy"></div>
@@ -142,7 +142,7 @@ function init(data) {
     wheelSensitivity: 0.2,
   });
 
-  // Hover: tooltip + highlight the narrator's neighborhood.
+  // Hover: tooltip + highlight the narrator's neighbourhood.
   const tip = document.getElementById('tooltip');
   cy.on('mouseover', 'node', evt => {
     const n = evt.target, d = n.data();

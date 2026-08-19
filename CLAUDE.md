@@ -8,7 +8,7 @@ Interactive transmission network of hadith narrators from Sahih al-Bukhari.
 one stage at a time, only when asked, respecting its scope, guardrails, and
 done-when criteria. Never mix stages in one PR. If a task seems to require
 breaking a global guardrail (especially: no invented data; no ML-generated
-reliability judgments), stop and ask instead of working around it.
+reliability judgements), stop and ask instead of working around it.
 
 ## Practical setup
 
@@ -20,13 +20,13 @@ reliability judgments), stop and ask instead of working around it.
 
 ## Conventions
 
-- Name normalization, alias map, and Tabi'un exclusion list live at the top
+- Name normalisation, alias map, and Tabi'un exclusion list live at the top
   of `scripts/build_graph.py` — extend them there, don't fork the logic.
-- The viewer (`web/index.html`) is a static page, no build step. Its 4-color
-  categorical palette was validated for colorblind safety (all-pairs, light +
+- The viewer (`web/index.html`) is a static page, no build step. Its 4-colour
+  categorical palette was validated for colour-blind safety (all-pairs, light +
   dark) with the dataviz skill's validator — do not add or change series
-  colors without re-running that validation. More than 4 colored communities
-  will not pass; fold extras into gray "Other".
+  colours without re-running that validation. More than 4 coloured communities
+  will not pass; fold extras into grey "Other".
 - Sensitive-domain tone: classical scholars are the authority on narrator
   reliability. Grades are displayed verbatim with their source named.
 

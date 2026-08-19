@@ -1,4 +1,4 @@
-"""Shared Arabic isnad parsing: normalization, segmentation, full chains.
+"""Shared Arabic isnad parsing: normalisation, segmentation, full chains.
 
 Both `build_graph.py` (Stage 0) and `build_full_graph.py` (Stage 1) import
 from here so there is exactly one implementation of the Arabic-side logic.
@@ -6,7 +6,7 @@ from here so there is exactly one implementation of the Arabic-side logic.
 Text order convention: an isnad is written student-first. Segment 0 is
 al-Bukhari's own shaykh; the last segment is the Companion, closest to the
 Prophet (peace be upon him). Transmission therefore flows from the END of the
-list toward the START.
+list towards the START.
 """
 
 import re
@@ -18,7 +18,7 @@ AR_HONORIFICS = re.compile(
 )
 
 # Verbs/particles that separate one transmitter from the next in an isnad.
-# Waw-prefixed forms are listed explicitly: after normalization the waw is
+# Waw-prefixed forms are listed explicitly: after normalisation the waw is
 # glued to the following word, so "وحدثنا" is a single token.
 SPLITTERS = {
     "حدثنا", "حدثني", "حدثتنا", "حدثتني", "حدثه", "حدثهم", "حدثته",
@@ -189,7 +189,7 @@ def resolve_relatives(levels: list[list[str]]) -> list[tuple[list[str], bool]]:
         for name in names:
             if is_relative(name):
                 head = name.split()[0]
-                # The referrer is the preceding level (one step toward
+                # The referrer is the preceding level (one step towards
                 # al-Bukhari), i.e. the person who said "from his father".
                 owner = " + ".join(levels[i - 1]) if i > 0 else "?"
                 resolved.append(f"{head} ⟨{owner}⟩")

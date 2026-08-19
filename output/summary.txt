@@ -7,15 +7,15 @@ Louvain communities: 12 (sizes: [20, 18, 18, 16, 15, 4, 3, 2, 1, 1, 1, 1])
   Anas bin Malik                                  694 hadiths, 125 students
   Sahl bin Sa'd                                   103 hadiths,  12 students
   Abu Bakra                                        32 hadiths,   6 students
-  'Ubada bin As-Samit                              17 hadiths,  11 students
   Zaid bin Thabit                                  17 hadiths,   9 students
+  'Ubada bin As-Samit                              17 hadiths,  11 students
   Um 'Atiyya                                       15 hadiths,   5 students
   As-Saib bin Yazid                                12 hadiths,   6 students
-  `Amra bint `Abdur-Rahman                          8 hadiths,   3 students
-  Salim bin `Abdullah                               8 hadiths,   3 students
   Al-Qasim bin Muhammad                             8 hadiths,   5 students
+  Salim bin `Abdullah                               8 hadiths,   3 students
+  `Amra bint `Abdur-Rahman                          8 hadiths,   3 students
   Um `Atiya                                         7 hadiths,   4 students
-  Abu Usaid                                         7 hadiths,   5 students
+  `Abdullah bin Mughaffal                           7 hadiths,   4 students
   ... and 8 more
 
 --- Community 1 (18 members) ---
@@ -27,8 +27,8 @@ Louvain communities: 12 (sizes: [20, 18, 18, 16, 15, 4, 3, 2, 1, 1, 1, 1])
   `Adi bin Hatim                                   22 hadiths,   8 students
   Abu Juhaifa                                      17 hadiths,   8 students
   `Uqba bin 'Amir                                  14 hadiths,   2 students
-  An-Nu`man bin 'Bashir                            10 hadiths,   7 students
   `Abdullah bin Dinar                              10 hadiths,   8 students
+  An-Nu`man bin 'Bashir                            10 hadiths,   7 students
   `Abdullah bin Zaid                                8 hadiths,   3 students
   Zaid bin Arqam                                    8 hadiths,   4 students
   ... and 6 more
@@ -42,10 +42,10 @@ Louvain communities: 12 (sizes: [20, 18, 18, 16, 15, 4, 3, 2, 1, 1, 1, 1])
   Jubair bin Mut`im                                15 hadiths,   5 students
   `Abdullah bin Abi Qatada                         11 hadiths,   1 students
   Abu Huraira and Zaid bin Khalid                   9 hadiths,   5 students
-  Zaid bin Khalid Al-Juhani                         8 hadiths,   4 students
   Zaid bin Khalid                                   8 hadiths,   5 students
+  Zaid bin Khalid Al-Juhani                         8 hadiths,   4 students
+  Al-Musaiyab                                       6 hadiths,   3 students
   Abu Aiyub Al-Ansari                               6 hadiths,   6 students
-  Hisham                                            6 hadiths,   4 students
   ... and 6 more
 
 --- Community 3 (16 members) ---
@@ -55,8 +55,8 @@ Louvain communities: 12 (sizes: [20, 18, 18, 16, 15, 4, 3, 2, 1, 1, 1, 1])
   Sa'd bin Abi Waqqas                              34 hadiths,  13 students
   Hudhaifa                                         28 hadiths,  12 students
   Al-Mughira bin Shu'ba                            23 hadiths,  11 students
-  Abu Mas`ud                                       19 hadiths,  13 students
   Abu Dhar                                         19 hadiths,   8 students
+  Abu Mas`ud                                       19 hadiths,  13 students
   Jarir                                            14 hadiths,   7 students
   Khabbab                                          11 hadiths,   4 students
   Abu Mas`ud Al-Ansari                              9 hadiths,   7 students
@@ -81,8 +81,8 @@ Louvain communities: 12 (sizes: [20, 18, 18, 16, 15, 4, 3, 2, 1, 1, 1, 1])
 --- Community 5 (4 members) ---
   `Abdullah bin Abi `Aufa                          10 hadiths,   8 students
   Ibn Abi `Aufa                                     9 hadiths,   8 students
-  `Asim                                             6 hadiths,   4 students
   Ash-Shaibani                                      6 hadiths,   4 students
+  `Asim                                             6 hadiths,   4 students
 
 --- Community 6 (3 members) ---
   `Imran bin Husain                                14 hadiths,   9 students
@@ -90,8 +90,8 @@ Louvain communities: 12 (sizes: [20, 18, 18, 16, 15, 4, 3, 2, 1, 1, 1, 1])
   `Imran                                            5 hadiths,   4 students
 
 --- Community 7 (2 members) ---
-  `Abdullah bin Ka`b                                8 hadiths,   7 students
   Ka`b bin Malik                                    8 hadiths,   7 students
+  `Abdullah bin Ka`b                                8 hadiths,   7 students
 
 --- Community 8 (1 members) ---
   Jabir bin Samura                                  7 hadiths,   4 students

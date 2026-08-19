@@ -14,8 +14,8 @@ Louvain community detection. Two views ship today:
 - **Edges** — two Companions are linked when the same student (the second
   narrator in the isnad) transmitted from both; weight = number of distinct
   shared students.
-- **Color** — Louvain communities (weighted). The four largest are colored;
-  smaller fragments fold into gray "Other".
+- **Colour** — Louvain communities (weighted). The four largest are coloured;
+  smaller fragments fold into grey "Other".
 
 ### Full network view (Stage 1)
 
@@ -23,7 +23,7 @@ Louvain community detection. Two views ship today:
   sized by how many hadiths they appear in.
 - **Edges** — directed teacher → student, taken from adjacent positions in a
   chain; weight = number of hadiths carrying that hand-off.
-- **Color** — the four largest Louvain communities; everything else gray.
+- **Colour** — the four largest Louvain communities; everything else grey.
   Unresolved placeholders (see below) are drawn faded and can be hidden.
 - **Layout** — two-level: the communities are placed relative to one another,
   then each is laid out inside its own patch. A single flat force layout of
@@ -33,7 +33,7 @@ Louvain community detection. Two views ship today:
 
 ```
 data/bukhari/               97 chapter CSVs from the LK Hadith Corpus
-scripts/isnad_parse.py      shared Arabic normalization + chain parsing
+scripts/isnad_parse.py      shared Arabic normalisation + chain parsing
 scripts/build_graph.py      Stage 0: Companions -> Louvain -> output/
 scripts/build_full_graph.py Stage 1: full chains -> centrality -> output/
 output/graph.json           Stage 0 nodes, edges, communities
@@ -46,7 +46,7 @@ web/full.html               sigma.js/WebGL viewer (light + dark)
 ```
 
 Both scripts are deterministic: identical inputs give byte-identical outputs.
-That needs care, because Python randomizes set iteration order per process and
+That needs care, because Python randomises set iteration order per process and
 Louvain's result depends on the order it visits nodes — so anything feeding
 node insertion order is sorted first.
 
@@ -71,7 +71,7 @@ marker (`ح`, a switch to a parallel chain) and are split in two.
 **Graph.** 3,809 nodes, 9,712 directed edges, 9 weakly connected components
 (the giant one holds 3,796 nodes, 99.7%), 28 Louvain communities.
 
-**Ambiguity.** Identity at this stage is the normalized name string, so one
+**Ambiguity.** Identity at this stage is the normalised name string, so one
 man written two ways is two nodes and two men written the same way are one
 node. The scale of the problem, to be fixed in Stage 2:
 
@@ -99,7 +99,7 @@ explicitly bridge otherwise separate Companion subtrees.
 
 - The Companion is taken from the English isnad ("Narrated X:"), the student
   from the second-to-last transmitter of the Arabic isnad (split on
-  transmission verbs after normalization).
+  transmission verbs after normalisation).
 - Name disambiguation is heuristic: an alias map merges common translation
   variants, and a curated list drops well-known Successors (Tabi'un) whom the
   translator listed as first narrator. Both lists live at the top of
@@ -107,7 +107,7 @@ explicitly bridge otherwise separate Companion subtrees.
   mislabel a narrator — a proper fix needs a rijal database (phase 2).
 - An isnad is written student-first: segment 0 is al-Bukhari's own shaykh and
   the last segment is the Companion, so transmission runs from the *end* of the
-  parsed list toward the start. Both scripts rely on this.
+  parsed list towards the start. Both scripts rely on this.
 - Relative references ("from his father") cannot be resolved to a name without
   a rijal database. Stage 0 skips them for edges; Stage 1 keeps the chain
   intact with a contextual placeholder — `ابيه ⟨هشام⟩` is "the father of
@@ -133,8 +133,8 @@ then stop and regroup before starting the next. Never mix stages in one PR.
 
 1. **No invented data.** A narrator, edge, or attribute appears only if it is
    traceable to a source row/record. Unresolved or ambiguous entities are kept
-   and *flagged* (gray "unresolved" state), never guessed or dropped silently.
-2. **No ML-generated reliability judgments — ever.** Classical jarh wa ta'dil
+   and *flagged* (grey "unresolved" state), never guessed or dropped silently.
+2. **No ML-generated reliability judgements — ever.** Classical jarh wa ta'dil
    grades (Ibn Hajar, al-Dhahabi, ...) may be displayed verbatim with
    attribution. No model output may grade, score, or rank a narrator's
    trustworthiness. This is a hard line, not a style preference.
@@ -165,7 +165,7 @@ count).
 
 - Parse full Arabic isnads into ordered transmitter sequences (extend the
   existing splitter; keep the relative-reference skip rule).
-- Identity is still string-based (normalized Arabic name = one node). Accept
+- Identity is still string-based (normalised Arabic name = one node). Accept
   the resulting imperfection; **measure it**: report the count of distinct
   name strings and the estimated ambiguity hot spots (e.g. bare "Sufyan").
 - Compute betweenness/PageRank; sanity benchmark: az-Zuhri, Malik, and the
@@ -185,14 +185,14 @@ collections.
 - Primary source: [Itqan](https://github.com/R3GENESI5/Itqan) (115k profiles,
   name variants, teacher/student links). Fallback/cross-check:
   [Kaggle hadith-narrators](https://www.kaggle.com/datasets/fahd09/hadith-narrators) (~24k, pre-linked teacher/student indices).
-- Match on normalized name variants first, then disambiguate collisions using
+- Match on normalised name variants first, then disambiguate collisions using
   chain context (who they narrate from/to vs. the database's teacher/student
   lists) — the approach in [arXiv:2607.05424](https://arxiv.org/html/2607.05424).
 - Ship a versioned resolution table (`output/resolution.csv`: name string →
   narrator ID, confidence, method) plus a manual override file that wins over
   automatic matches.
 - **Guardrail:** downstream stages may only use resolved IDs; unresolved
-  nodes stay in the graph flagged gray. No fuzzy match below the confidence
+  nodes stay in the graph flagged grey. No fuzzy match below the confidence
   threshold gets an ID.
 
 **Done when:** ≥80% of chain positions resolve to an ID; the top-100
@@ -220,13 +220,13 @@ filters compose (e.g. "Kufan narrators, 2nd generation").
 
 **Goal:** a 2D embedding map as an alternative lens, not a replacement.
 
-- node2vec on the full resolved graph → UMAP → 2D scatter, colored by the
+- node2vec on the full resolved graph → UMAP → 2D scatter, coloured by the
   Louvain communities, side by side with the force view.
 - Evaluate: do embedding clusters agree with Louvain and with known regional
   schools? Report the agreement, including where they disagree.
 - **GNNs stay out of scope** until a legitimate prediction task exists.
   Candidate future tasks: link prediction for entity resolution assistance,
-  missing-attribute imputation (clearly labeled as inferred). Reliability
+  missing-attribute imputation (clearly labelled as inferred). Reliability
   prediction is permanently excluded (guardrail 2).
 
 **Done when:** the map ships with an honest written assessment of what it

@@ -7,7 +7,7 @@ Metrics: directed betweenness (bridge role) and PageRank on the reversed
          graph (how much transmission traces back through a narrator).
 Output : output/full_graph.json, output/centrality.csv, output/full_summary.txt
 
-Identity is string-based at this stage: one normalized Arabic name = one
+Identity is string-based at this stage: one normalised Arabic name = one
 node. That is known to be imperfect (a bare "Sufyan" may be two men); the
 imperfection is measured and reported rather than guessed away. Entity
 resolution against a rijal database is Stage 2.
@@ -65,12 +65,12 @@ def community_layout(und, comm_of, communities) -> dict:
 
     xs = spread({i: p[0] for i, p in raw.items()}, -1.45, 1.45)
     ys = spread({i: p[1] for i, p in raw.items()}, -0.85, 0.85)
-    centers = {i: (xs[i], ys[i]) for i in raw}
+    centres = {i: (xs[i], ys[i]) for i in raw}
 
     # A handful of narrators sit in tiny disconnected components. Park them in a
     # row beneath the main mass rather than letting them drive the extents.
     for k, i in enumerate(islands):
-        centers[i] = (-1.3 + 0.32 * k, -1.25)
+        centres[i] = (-1.3 + 0.32 * k, -1.25)
 
     biggest = max(len(c) for c in communities)
     pos: dict = {}
@@ -89,7 +89,7 @@ def community_layout(und, comm_of, communities) -> dict:
         else:
             local = nx.spring_layout(sub, seed=SEED, weight="weight", iterations=80)
         radius = 0.05 + 0.13 * (len(comm) / biggest) ** 0.5
-        cx, cy = centers[i]
+        cx, cy = centres[i]
         for n, (x, y) in local.items():
             pos[n] = (cx + x * radius, cy + y * radius)
     return pos
@@ -163,7 +163,7 @@ def build() -> None:
     t0 = time.time()
     betw = nx.betweenness_centrality(G, weight=None, seed=SEED)
     print(f"betweenness in {time.time() - t0:.0f}s")
-    # Reversed graph: mass flows from collectors back toward the sources, so a
+    # Reversed graph: mass flows from collectors back towards the sources, so a
     # high score means "much of the corpus traces back through this narrator".
     pr_source = nx.pagerank(G.reverse(copy=True), weight="weight")
     pr_collect = nx.pagerank(G, weight="weight")
@@ -216,7 +216,7 @@ def build() -> None:
         "meta": {
             "source": "Sahih al-Bukhari (LK Hadith Corpus)",
             "stage": 1,
-            "identity": "string-based (normalized Arabic name); not entity-resolved",
+            "identity": "string-based (normalised Arabic name); not entity-resolved",
             "edge_definition": "teacher -> student, adjacent positions in a chain",
             "rows_total": rows_total,
             "rows_used": rows_used,

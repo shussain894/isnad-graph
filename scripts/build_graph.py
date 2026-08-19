@@ -28,7 +28,7 @@ SEED = 42
 
 # ---------------------------------------------------------------- English side
 
-# Canonical names for common translation variants. Keys are normalized forms
+# Canonical names for common translation variants. Keys are normalised forms
 # (apostrophes removed, ibn -> bin, hyphens -> spaces, lowercase).
 ALIASES = {
     "aisha": "'Aisha",
@@ -94,13 +94,13 @@ TABIUN = {
 
 NARRATED_RE = re.compile(r"^\s*narrated\s+", re.IGNORECASE)
 
-# Registry of display names per normalized key, so every variant of a name
+# Registry of display names per normalised key, so every variant of a name
 # collapses onto one node even when it has no alias entry.
 _display: dict[str, str] = {}
 
 
 def norm_english(name: str) -> str:
-    """Normalized key: drop apostrophe-like marks, unify ibn/b. -> bin."""
+    """Normalised key: drop apostrophe-like marks, unify ibn/b. -> bin."""
     s = unicodedata.normalize("NFKD", name)
     s = "".join(c for c in s if not unicodedata.combining(c))
     for ch in ("'", "`", "ʿ", "‘", "’"):
@@ -131,7 +131,7 @@ def extract_companion(english_isnad) -> str | None:
 
 
 # ----------------------------------------------------------------- Arabic side
-# Normalization and chain parsing live in isnad_parse.py, shared with Stage 1.
+# Normalisation and chain parsing live in isnad_parse.py, shared with Stage 1.
 
 
 def extract_students(arabic_isnad) -> list[str]:
